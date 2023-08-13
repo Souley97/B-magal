@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+
+    <title>Magal Touba</title>
+</head>
+<body>
+
+
+ <div class="palak">
+           <div class="op"><ul>
+               <li><i class="fa fa-heart-o "></i></i></li> 
+             
+           </ul></div>
+           
+            <div class="img">
+                <span>
+                    <img src="img/alm.jpg"></span>
+            </div>
+            <div class="head">
+                <h3>MAGAL TOUBA 2023</h3>
+            <p></p> </div>
+            <div class="f">
+                <ul > <li >
+                      <i class="fa fa-facebook"></i></li>
+                    <li><i class="fa fa-instagram"></i> </li> <li> <i class="fa fa-twitter" ></i></li>
+                    
+                    <h2 class="mm" id="out">18 SAFAR <br>Le 04 / Septembre / 2023</h2>
+                    <h2 id="j">J J -</h2>
+                    <div class="m">
+                    <h2 class="H"  id="output"></h2>
+                    <h2  class="P"  id="output1"><span class="moi">MOIS </span>   <span class="jou"> JOURS</span>   <span class="heur">HEURES  </span><span class="min"> MINUTES</span><span class="sec">   SECONDES</span></h2></div>
+                </ul></div>
+                <footer> BAMSACHINE DESIGN</footer>
+        </div>
+
+
+<script>
+    function diff(){
+    
+        var m=moment('04-09-2023');
+        var a=moment('2023-09-04 ');
+        var b=moment();
+        diff = moment.preciseDiff(a,b, true);
+        intervals = [ 'months', 'days', 'hours', 'minutes', 'seconds'];
+        interval = ['Mois' , 'Jours', 'Heur:','m:','s'];
+
+        output= [];
+
+        for(var i=0; i<intervals.length; i++){
+            var d = diff[intervals[i]]; 
+            var d = d < 10 ? '0' + d : d;
+            output.push(d + ' : ');
+           // output.push(d +   '    '+  interval[i]);
+
+        }
+        document.getElementById('output').innerHTML =output.join(' ');
+        document.getElementById('output1').innerHTML =output1.join(' ');
+    }
+
+    setInterval(diff, 1000);
+
+
+
+
+
+    
+</script>
+
+<script>    
+    var text="Mouride Mbecte Mi Nieuw Na. Whaath Whath  Demm TOUBA Ziar Chekhoule Khadime"
+    var word = text.split("");
+var i = 0;
+var interval = setInterval(writeText, 100 );
+function writeText() {
+    var p = document.getElementsByTagName("p")[0];
+    if (i < word.length) {
+        p.innerHTML += word[i];
+        i++;
+    } else {
+        clearInterval(interval);
+         
+  
+  }
+  }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+/* Created by PALAK😄😄 */
+
+
+ body{
+    margin:0;
+    padding:0;
+    background-color:black;
+    color:white;
+   
+    
+}
+
+.palak{
+   
+    top:50%;
+     position:absolute;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:500px;
+        background:linear-gradient(rgba(24, 7, 16, 0.452),rgba(27, 27, 59, 0.37) ),url(img/touba.jpg);
+
+    background-size: cover;
+    box-shadow:1px 2px 5px gold,1px 2px 12px red;
+    
+    border-radius:20px;
+    padding:4px;
+}
+.m{
+   
+   
+            background:linear-gradient(rgba(78, 49, 65, 0.733),rgba(13, 13, 14, 0.815) ),url(img/touba.jpg);
+
+    background-size: cover;
+    box-shadow:1px 2px 5px rgb(5, 5, 3),1px 2px 12px red;
+    width: 109%;
+    height: 11vh;
+    position: relative;
+    right: 3vh;
+    border-radius:20px;
+}
+.m .H{
+    font-size:40px;
+
+   
+}.m .P{
+
+    font-size:15px;
+    margin-top: -5vh;
+
+   
+}.m .P span{
+    
+    font-size:12px;
+    margin-left: 5vh;
+    position: relative;
+    right: 2.5vh;
+    color: rgb(234, 234, 234);
+
+   
+}
+.m .P  .min{
+    
+    
+    margin-left: 3vh;
+
+   
+}
+.m .P  .sec{
+    
+    
+    margin-left: 3vh;
+
+   
+}
+.mm {
+   
+   
+    background:linear-gradient(rgba(215, 212, 214, 0.215),rgba(13, 13, 14, 0.32) );
+    color: rgb(255, 255, 255);
+    background-size: cover;
+    box-shadow:1px 2px 5px rgba(35, 35, 35, 0.616),1px 2px 12px rgba(6, 6, 6, 0.477);
+    animation: name  4s infinite;
+    border-radius:20px;
+}   
+
+@keyframes name {
+    0%, 20%{
+        color: rgb(230, 226, 226);
+
+    }20.001%, 46%{
+        color: rgb(214, 214, 214);
+
+    }
+    40.001%, 65%{
+        color: rgb(145, 144, 144);
+
+    }
+    60.001%, 85%{
+        color: rgb(241, 241, 241);
+
+    }
+    80.001%, 100%{
+        color: rgb(255, 255, 255);
+
+    }
+}
+#j{
+   
+   
+
+    background-size: cover;
+    border-radius:20px;
+}
+.palak .op ul li{
+    overflow:hidden;
+}
+.palak .img span img {
+    position:relative ;
+    top:0;
+    left:0;
+    Border-radius:50%;
+    width:100%;
+    height:100%;
+    box-shadow:1px 2px 8px red,1px 2px 12px black;
+    
+    margin:0 ;
+   
+}
+
+.palak .img span {
+    display:block;
+    position:relative;
+    width:90px;
+    height:90px;
+     Border-radius:50%;
+    margin:0 auto;
+    box-shadow:1px 2px 8px red ,1px 0px 12px black;
+   
+}
+footer {
+
+    position:relative;
+    left: 150px;
+    top: 30px;
+   
+}
+.palak .head p{margin:20px;
+    line-height:2;
+    font-size:20px;
+    width:79%; 
+}
+.palak .head h3{margin:20px;
+    line-height:2;
+    font-size:26px;
+    color: rgb(210, 210, 211);
+    box-shadow:0px 2px  rgba(0, 0, 0, 0.562);
+    
+}
+.palak .head{
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0px 3px 19px black;
+    
+}
+.palak .f{
+    text-align:center;
+    margin-right:50px;
+    margin-bottom:10px;
+}
+.palak .f li{
+     display:inline-block;
+    font-size:35px;
+    line-height:70px;color:black;
+}
+@media screen  {
+    .palak{
+       width: 90%;
+        
+    }
+    body{
+       width: 60%; 
+    }
+   
+}
+@media screen and (max-width: 550px){
+ .m{
+      
+        height: 12vh;
+        font-weight: 400;
+     margin-top: 8vh;
+     position: relative;
+    }.m .H{
+        width: 110%;
+        font-size: 4vh;
+        position: relative;
+        top: 3vh;
+        right: 3vh;
+       
+    
+    }.m .P span{
+        font-weight: 400;
+        font-size: 10px;
+        margin-left: 3.4vh;
+        position: relative;
+        top: 4vh;
+        right: 2.5vh;
+        
+    }
+    .m .P  .moi{
+    
+    
+    margin-left: 5.3vh;
+
+}.m .P  .heur{
+    
+    
+    margin-left: 2.3vh;
+
+}.m .P  .jou{
+    
+    
+    margin-left: 2.7vh;
+
+}
+.m .P  .min{
+    
+    
+    margin-left: 2vh;
+
+   
+}
+.m .P  .sec{
+    
+    
+    margin-left: 2vh;
+
+   
+}
+}
+@media screen and (max-width: 415px){
+ .m{
+      width: 115%;
+        height: 12vh;
+        font-weight: 400;
+     margin-top: 8vh;
+     position: relative;
+    }.m .H{
+        width: 110%;
+        font-size: 3.6vh;
+        position: relative;
+        top: 3vh;
+       
+    
+    }.m .P span{
+        font-weight: 400;
+        font-size: 8px;
+        margin-left: 3.4vh;
+        position: relative;
+        top: 4vh;
+
+    }
+    .m .P  .moi{
+    
+    
+    margin-left: 2vh;
+
+}.m .P  .heur{
+    
+    
+    margin-left: 2.3vh;
+
+}.m .P  .jou{
+    
+    
+    margin-left: 4vh;
+
+}
+.m .P  .min{
+    
+    
+    margin-left: 2vh;
+
+   
+}
+.m .P  .sec{
+    
+    
+    margin-left: 2vh;
+
+   
+}
+}
+
+
