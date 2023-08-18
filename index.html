@@ -30,11 +30,12 @@
                       <i class="fa fa-facebook"></i></li>
                     <li><i class="fa fa-instagram"></i> </li> <li> <i class="fa fa-twitter" ></i></li>
                     
-                    <h2 class="mm" id="out">18 SAFAR <br>Le 04 / Septembre / 2023</h2>
-                    <h2 id="j">J J -</h2>
-                    <div class="m">
+                    <!-- <h2 class="mm" id="out">18 SAFAR <br>Le 04 / Septembre / 2023</h2> -->
+                    <!-- <h2 id="j">J J -</h2> -->
+                    
+                    <div class="m"> <h2 class="h2">18 SAFAR jj-   </h2> 
                     <h2 class="H"  id="output"></h2>
-                    <h2  class="P"  id="output1"><span class="moi">MOIS </span>   <span class="jou"> JOURS</span>   <span class="heur">HEURES  </span><span class="min"> MINUTES</span><span class="sec">   SECONDES</span></h2></div>
+                    <h2  class="P"  id="output1">   <span class="jou"> JOURS</span>   <span class="heur">HEURES  </span><span class="min"> MINUTES</span><span class="sec">   SECONDES</span></h2></div>
                 </ul></div>
                 <footer> BAMSACHINE DESIGN</footer>
         </div>
@@ -43,12 +44,12 @@
 <script>
     function diff(){
     
-        var m=moment('04-09-2023');
-        var a=moment('2023-09-04 ');
+        var m=moment('05-09-2023');
+        var a=moment('2023-09-05 ');
         var b=moment();
         diff = moment.preciseDiff(a,b, true);
-        intervals = [ 'months', 'days', 'hours', 'minutes', 'seconds'];
-        interval = ['Mois' , 'Jours', 'Heur:','m:','s'];
+        intervals = [ 'days', 'hours', 'minutes', 'seconds'];
+        interval = ['Jours', 'Heur:','m:','s'];
 
         output= [];
 
