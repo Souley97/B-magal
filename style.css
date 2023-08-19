@@ -32,7 +32,7 @@
 .m{
    
    
-            background:linear-gradient(rgba(78, 49, 65, 0),rgba(137, 96, 2, 0.959) ),url(img/touba.jpg);
+            background:linear-gradient(rgba(78, 49, 65, 0),rgb(137, 96, 2) ),url(img/touba.jpg);
 
     background-size: cover;
     box-shadow:1px 2px 5px rgb(5, 5, 3),1px 2px 12px red;
@@ -42,7 +42,7 @@
     right: 2vh;
     border-radius:20px;
     color:white;
-    top: 3vh;
+    top: 12vh;
     
 
 }
