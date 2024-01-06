@@ -30,12 +30,12 @@
                       <i class="fa fa-facebook"></i></li>
                     <li><i class="fa fa-instagram"></i> </li> <li> <i class="fa fa-twitter" ></i></li>
                     
-                    <!-- <h2 class="mm" id="out">18 SAFAR <br>Le 04 / Septembre / 2023</h2> -->
+                    <h2 class="mm" id="out">18 SAFAR <br>Le 24 / AOUT / 2024</h2>
                     <!-- <h2 id="j">J J -</h2> -->
                     
                     <div class="m"> <h2 class="h2">18 SAFAR JJ-   </h2> 
                     <h2 class="H"  id="output"></h2>
-                    <h2  class="P"  id="output1">   <span class="jou"> JOURS</span>   <span class="heur">HEURES  </span><span class="min"> MINUTES</span><span class="sec">   SECONDES</span></h2></div>
+                    <h2  class="P"  id="output1">  <span class="jou"> MOIS</span>   <span class="jou"> JOURS</span>   <span class="heur">HEURES  </span><span class="min"> MINUTES</span><span class="sec">   SECONDES</span></h2></div>
                 </ul></div>
                 <!-- <footer> BAMSACHINE DESIGN VOUS SOUHAETE UN BON MAGAL</footer> -->
         </div>
@@ -44,12 +44,11 @@
 <script>
     function diff(){
     
-        var m=moment('06-09-2023');
-        var a=moment('2023-09-05 ');
-        var b=moment();
-        diff = moment.preciseDiff(a,b, true);
-        intervals = [ 'days', 'hours', 'minutes', 'seconds'];
-        interval = ['Jours', 'Heur:','m:','s'];
+        var magal=moment('2024-08-24 ');
+        var today=moment();
+        diff = moment.preciseDiff(today,magal, true);
+        intervals = [ 'months','days', 'hours', 'minutes', 'seconds'];
+        interval = ['Mois','Jours', 'Heur:','m:','s'];
 
         output= [];
 
