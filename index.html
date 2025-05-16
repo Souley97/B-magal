@@ -1,801 +1,1002 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
     <!-- Fonts + Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Magal Touba 2025</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="welcome-popup" class="welcome-popup">
-        <div class="welcome-content">
-            <h2 data-translate="welcome-title">Bienvenue au Magal Touba 2025</h2>
-            <p data-translate="welcome-subtitle">18 Safar 1446 H</p>
-            <div class="countdown-circles" id="welcome-countdown">
-                <!-- Les cercles de compteur seront ajoutés ici par JavaScript -->
-            </div>
-            <button id="welcome-close" class="btn-glow" data-translate="welcome-btn">Commencer l'expérience</button>
+      <div class="welcome-content">
+        <h2 data-translate="welcome-title">Bienvenue au Magal Touba 2025</h2>
+        <p data-translate="welcome-subtitle">18 Safar 1446 H</p>
+        <div class="countdown-circles" id="welcome-countdown">
+          <!-- Les cercles de compteur seront ajoutés ici par JavaScript -->
         </div>
+        <button
+          id="welcome-close"
+          class="btn-glow"
+          data-translate="welcome-btn"
+        >
+          Commencer l'expérience
+        </button>
+      </div>
     </div>
 
     <div class="container">
-        <header>
-            <div class="language-selector">
-                <button class="lang-btn active" data-lang="fr"><img src="img/2025/FR.png" alt="Français">FR</button>
-                <button class="lang-btn" data-lang="wo"><img src="img/2025/SN.png" alt="Wolof">WO</button>
-            </div>
-            
-            <div class="logo">
-                <img src="img/2025/serigne_touba.png" alt="Serigne Touba" class="main-image pulse">
-            </div>
-            <h1 data-translate="title"> 🔔Magal Touba 2025 🔔</h1>
-            <div class="typing" data-translate="subtitle">Le compte à rebours vers l'événement spirituel !</div>
-            
-            <div class="interactive-buttons">
-                <button class="btn-glow" id="notify-btn"><i class="fas fa-bell"></i> <span data-translate="notify-btn">M'avertir</span></button>
-                <button class="btn-glow" id="share-btn"><i class="fas fa-share-alt"></i> <span data-translate="share-btn">Partager</span></button>
+      <header>
+        <div class="language-selector">
+          <button class="lang-btn active" data-lang="fr">
+            <img src="img/2025/FR.png" alt="Français" />FR
+          </button>
+          <button class="lang-btn" data-lang="wo">
+            <img src="img/2025/SN.png" alt="Wolof" />WO
+          </button>
+        </div>
+
+        <div class="logo">
+          <img
+            src="img/2025/serigne_touba.png"
+            alt="Serigne Touba"
+            class="main-image pulse"
+          />
+        </div>
+        <h1 data-translate="title">🔔Magal Touba 2025 🔔</h1>
+        <div class="typing" data-translate="subtitle">
+          Le compte à rebours vers l'événement spirituel !
+        </div>
+
+        <div class="interactive-buttons">
+          <button class="btn-glow" id="share-btn">
+            <i class="fab fa-whatsapp"></i> Partager WhatsApp
+          </button>
+          <!-- JS va remplir ça
+  <button class="btn-glow" id="notify-btn"><i class="fas fa-bell"></i> <span data-translate="notify-btn">M'avertir</span></button>
                 <button class="btn-glow" id="info-btn"><i class="fas fa-info-circle"></i> <span data-translate="info-btn">En savoir plus</span></button>
-            </div>
-        </header>
+        --></div>
+      </header>
 
-        <div class="countdown" id="output">   
-            <!-- JS va remplir ça -->
+      <div class="countdown" id="output">
+        <!-- JS va remplir ça -->
+      </div>
+
+      <div class="event-date">18 Safar 1446 H | 2025-08-13</div>
+
+      <div class="location-badge">
+        <i class="fas fa-map-marker-alt"></i>
+        <span data-translate="location">Touba, Sénégal</span>
+        <span class="location-tooltip" data-translate="location-tooltip"
+          >Voir sur la carte</span
+        >
+      </div>
+
+      <div class="content">
+        <div class="section-title">
+          <h2 data-translate="khalifes-title">
+            Les Khalifes Généraux des Mourides
+          </h2>
+          <p data-translate="khalifes-subtitle">
+            De 1927 à aujourd'hui - L'héritage spirituel de Serigne Touba
+          </p>
         </div>
 
-        <div class="event-date">18 Safar 1446 H | 2025-08-13</div>
-        
-        <div class="location-badge">
-            <i class="fas fa-map-marker-alt"></i> <span data-translate="location">Touba, Sénégal</span>
-            <span class="location-tooltip" data-translate="location-tooltip">Voir sur la carte</span>
+        <div class="slider-container">
+          <div class="slider" id="image-slider">
+            <div class="slide active">
+              <img
+                src="img/2025/khalif/SERIGNE-TOUBA-MBACK.png"
+                alt="Serigne Touba"
+                class="gallery-image"
+              />
+              <div class="slide-caption">
+                <h3>Serigne Touba</h3>
+                <p data-translate="slider-subtitle">
+                  Le guide spirituel des mourides (1853-1927)
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="img/2025/khalif/8.png"
+                alt="Serigne Mountaha"
+                class="gallery-image"
+              />
+              <div class="slide-caption khalife-info">
+                <h3>Serigne Mountakha Bassirou Mbacké</h3>
+                <p data-translate="serigne8-subtitle">
+                  8ème Khalife général des mourides (depuis 2018)
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="img/2025/khalif/1.png"
+                alt="Serigne Mountaha"
+                class="gallery-image"
+              />
+
+              <div class="slide-caption khalife-info">
+                <h3>Cheikh Mouhammadou Moustapha Mbacké</h3>
+                <p data-translate="serigne1-subtitle">
+                  1er Khalife général (1927-1945)
+                </p>
+                <!--   <p>Premier successeur de Cheikh Ahmadou Bamba, il a initié la construction du chemin de fer reliant Diourbel à Touba.</p>-->
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="img/2025/khalif/2.png"
+                alt="Serigne Mountaha"
+                class="gallery-image"
+              />
+
+              <div class="slide-caption khalife-info">
+                <h3>Cheikh Mouhamadou Fadilou Mbacké</h3>
+                <p data-translate="serigne2-subtitle">
+                  2ème Khalife général (1945-1968)
+                </p>
+                <!--    <p>Il a achevé la construction de la Grande Mosquée de Touba et a renforcé la dimension du Magal de Touba.</p>-->
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="img/2025/khalif/3.png"
+                alt="Serigne Mountaha"
+                class="gallery-image"
+              />
+
+              <div class="slide-caption khalife-info">
+                <h3>Cheikh Abdoul Ahad Mbacké</h3>
+                <p data-translate="serigne3-subtitle">
+                  3ème Khalife général (1968-1989)
+                </p>
+                <!--     <p>Il a poursuivi le développement de Touba, notamment dans le domaine de l'urbanisme et de l'éducation religieuse.</p>-->
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="img/2025/khalif/4.png"
+                alt="Serigne Mountaha"
+                class="gallery-image"
+              />
+              <div class="slide-caption khalife-info">
+                <h3>Cheikh Abdou Khadr Mbacké</h3>
+                <p data-translate="serigne4-subtitle">
+                  4ème Khalife général (1989-1990)
+                </p>
+                <!--   <p>Son règne a été court, mais il a continué l'œuvre de modernisation et de développement de la ville.</p>-->
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="img/2025/khalif/5.png"
+                alt="Serigne Mountaha"
+                class="gallery-image"
+              />
+              <div class="slide-caption khalife-info">
+                <h3>Cheikh Saliou Mbacké</h3>
+                <p data-translate="serigne5-subtitle">
+                  5ème Khalife général (1990-2007)
+                </p>
+                <!--  <p>Il a mené des projets agricoles et de rénovation de la mosquée, tout en maintenant la cohésion de la communauté mouride.</p>-->
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="img/2025/khalif/6.png"
+                alt="Serigne Mountaha"
+                class="gallery-image"
+              />
+              <div class="slide-caption khalife-info">
+                <h3>Mouhammadou Lamine Bara Mbacké</h3>
+                <p data-translate="serigne6-subtitle">
+                  6ème Khalife général (2007-2010)
+                </p>
+                <!--  <p>Premier petit-fils de Serigne Touba à assurer la charge de khalife, il a poursuivi les travaux de développement.</p>-->
+              </div>
+            </div>
+            <div class="slide">
+              <img
+                src="img/2025/khalif/7.png"
+                alt="Serigne Mountaha"
+                class="gallery-image"
+              />
+              <div class="slide-caption khalife-info">
+                <h3>Serigne Sidy Mokhtar Mbacké</h3>
+                <p data-translate="serigne7-subtitle">
+                  7ème Khalife général (2010-2018)
+                </p>
+                <!-- <p>Il a renforcé la cohésion sociale et poursuivi les projets de développement, reconnu pour sa piété.</p>-->
+              </div>
+            </div>
+          </div>
+          <div class="slider-controls">
+            <button id="prev-btn" class="slider-btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slider-dots" id="slider-dots"></div>
+            <button id="next-btn" class="slider-btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="audio-section">
+          <div class="section-title">
+            <h2 data-translate="khasida-title">
+              Khasida - Récitations sacrées
+            </h2>
+            <p data-translate="khasida-subtitle">
+              Écoutez les poèmes sacrés de Cheikh Ahmadou Bamba
+            </p>
+          </div>
+
+          <div class="audio-player-container">
+            <div class="audio-player">
+              <div class="player-controls">
+                <button id="play-btn" class="control-btn">
+                  <i class="fas fa-play" id="play-icon"></i>
+                </button>
+                <div class="track-info">
+                  <div class="track-name" data-translate="track-name">
+                    Khasida
+                  </div>
+                  <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar">
+                      <div class="progress" id="progress"></div>
+                    </div>
+                    <div class="time-display">
+                      <span id="current-time">00:00</span> /
+                      <span id="duration">00:00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="volume-container">
+                  <button id="mute-btn" class="control-btn small">
+                    <i class="fas fa-volume-up" id="volume-icon"></i>
+                  </button>
+                  <div class="volume-slider">
+                    <div class="volume-bar" id="volume-bar">
+                      <div class="volume-level" id="volume-level"></div>
+                    </div>
+                  </div>
+                </div>
+                <button id="loop-btn" class="control-btn small">
+                  <i class="fas fa-redo-alt"></i>
+                </button>
+              </div>
+
+              <audio
+                id="audio-player"
+                src="son/khasida.mp3"
+                preload="metadata"
+              ></audio>
+              <div id="autoplay-message" class="autoplay-message">
+                <i class="fas fa-info-circle"></i>
+                <span data-translate="audio-message"
+                  >Cliquez pour écouter la Khasida</span
+                >
+                <button
+                  id="start-audio"
+                  class="btn-glow"
+                  data-translate="start-audio-btn"
+                >
+                  Lancer l'audio
+                </button>
+              </div>
+            </div>
+            <div class="audio-message">
+              <i class="fas fa-info-circle"></i>
+              <span data-translate="khasida-info"
+                >Les Khasidas sont des poèmes mystiques composés par Cheikh
+                Ahmadou Bamba Mbacké durant son exil.</span
+              >
+            </div>
+          </div>
         </div>
 
-        <div class="content">
-            <div class="section-title">
-                <h2 data-translate="khalifes-title">Les Khalifes Généraux des Mourides</h2>
-                <p data-translate="khalifes-subtitle">De 1927 à aujourd'hui - L'héritage spirituel de Serigne Touba</p>
+        <div class="description">
+          <h2 data-translate="serviteur-title">
+            Le Serviteur Privilégié du Prophète Mohamed PSL (1853-1927)
+          </h2>
+          <div class="expandable-text">
+            <p data-translate="serviteur-text-1">
+              Dont le seul tort fut d'avoir osé persister ouvertement dans le
+              prêche pour la religion d'Allah islam. Fut 32 ans durant l'objet
+              de toutes sortes de privations et d'épreuves tour à tour.
+            </p>
+            <div class="hidden-text" id="more-text">
+              <p data-translate="serviteur-text-2">
+                Déporté pendant 7 ans au Gabon, 5 ans en Mauritanie, 5 ans à
+                Thieyenne Djolof, 15 en résidence surveillée à Diourbel au
+                Sénégal. Il n'a jamais cessé jusqu'à son rappel en Dieu le 19
+                juillet 1927 de défendre par son enseignement et son
+                comportement le message du prophète Mohammed PSL.
+              </p>
             </div>
-            
-            <div class="slider-container">
-                <div class="slider" id="image-slider">
-                    <div class="slide active">
-                        <img src="img/2025/khalif/SERIGNE-TOUBA-MBACK.png" alt="Serigne Touba" class="gallery-image">
-                        <div class="slide-caption">
-                            <h3  >Serigne Touba</h3>
-                            <p data-translate="slider-subtitle">Le guide spirituel des mourides (1853-1927)</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="img/2025/khalif/8.png" alt="Serigne Mountaha" class="gallery-image">
-                        <div class="slide-caption khalife-info">
-                            <h3>Serigne Mountakha Bassirou Mbacké</h3>
-                            <p data-translate="serigne8-subtitle">8ème Khalife général des mourides (depuis 2018)</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="img/2025/khalif/1.png" alt="Serigne Mountaha" class="gallery-image">
-
-                        <div class="slide-caption khalife-info">
-                            <h3>Cheikh Mouhammadou Moustapha Mbacké</h3>
-                            <p data-translate="serigne1-subtitle">1er Khalife général (1927-1945)</p>
-                        <!--   <p>Premier successeur de Cheikh Ahmadou Bamba, il a initié la construction du chemin de fer reliant Diourbel à Touba.</p>--> 
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="img/2025/khalif/2.png" alt="Serigne Mountaha" class="gallery-image">
-
-                        <div class="slide-caption khalife-info">
-                            <h3>Cheikh Mouhamadou Fadilou Mbacké</h3>
-                            <p data-translate="serigne2-subtitle">2ème Khalife général (1945-1968)</p>
-                            <!--    <p>Il a achevé la construction de la Grande Mosquée de Touba et a renforcé la dimension du Magal de Touba.</p>--> 
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="img/2025/khalif/3.png" alt="Serigne Mountaha" class="gallery-image">
-
-                        <div class="slide-caption khalife-info">
-                            <h3>Cheikh Abdoul Ahad Mbacké</h3>
-                            <p data-translate="serigne3-subtitle">3ème Khalife général (1968-1989)</p>
-                        <!--     <p>Il a poursuivi le développement de Touba, notamment dans le domaine de l'urbanisme et de l'éducation religieuse.</p>-->  
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="img/2025/khalif/4.png" alt="Serigne Mountaha" class="gallery-image">
-                        <div class="slide-caption khalife-info">
-                            <h3>Cheikh Abdou Khadr Mbacké</h3>
-                            <p data-translate="serigne4-subtitle">4ème Khalife général (1989-1990)</p>
-                          <!--   <p>Son règne a été court, mais il a continué l'œuvre de modernisation et de développement de la ville.</p>-->  
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="img/2025/khalif/5.png" alt="Serigne Mountaha" class="gallery-image">
-                        <div class="slide-caption khalife-info">
-                            <h3>Cheikh Saliou Mbacké</h3>
-                            <p data-translate="serigne5-subtitle">5ème Khalife général (1990-2007)</p>
-                           <!--  <p>Il a mené des projets agricoles et de rénovation de la mosquée, tout en maintenant la cohésion de la communauté mouride.</p>-->  
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="img/2025/khalif/6.png" alt="Serigne Mountaha" class="gallery-image">
-                        <div class="slide-caption khalife-info">
-                            <h3>Mouhammadou Lamine Bara Mbacké</h3>
-                            <p data-translate="serigne6-subtitle">6ème Khalife général (2007-2010)</p>
-                           <!--  <p>Premier petit-fils de Serigne Touba à assurer la charge de khalife, il a poursuivi les travaux de développement.</p>-->  
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="img/2025/khalif/7.png" alt="Serigne Mountaha" class="gallery-image">
-                        <div class="slide-caption khalife-info">
-                            <h3>Serigne Sidy Mokhtar Mbacké</h3>
-                            <p data-translate="serigne7-subtitle">7ème Khalife général (2010-2018)</p>
-                            <!-- <p>Il a renforcé la cohésion sociale et poursuivi les projets de développement, reconnu pour sa piété.</p>-->  
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="slider-controls">
-                    <button id="prev-btn" class="slider-btn"><i class="fas fa-chevron-left"></i></button>
-                    <div class="slider-dots" id="slider-dots"></div>
-                    <button id="next-btn" class="slider-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-            <div class="audio-section">
-                <div class="section-title">
-                    <h2 data-translate="khasida-title">Khasida - Récitations sacrées</h2>
-                    <p data-translate="khasida-subtitle">Écoutez les poèmes sacrés de Cheikh Ahmadou Bamba</p>
-                </div>
-                
-                <div class="audio-player-container">
-                    <div class="audio-player">
-                        <div class="player-controls">
-                            <button id="play-btn" class="control-btn">
-                                <i class="fas fa-play" id="play-icon"></i>
-                            </button>
-                            <div class="track-info">
-                                <div class="track-name" data-translate="track-name">Khasida</div>
-                                <div class="progress-container">
-                                    <div class="progress-bar" id="progress-bar">
-                                        <div class="progress" id="progress"></div>
-                                    </div>
-                                    <div class="time-display">
-                                        <span id="current-time">00:00</span> / 
-                                        <span id="duration">00:00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="volume-container">
-                                <button id="mute-btn" class="control-btn small">
-                                    <i class="fas fa-volume-up" id="volume-icon"></i>
-                                </button>
-                                <div class="volume-slider">
-                                    <div class="volume-bar" id="volume-bar">
-                                        <div class="volume-level" id="volume-level"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button id="loop-btn" class="control-btn small">
-                                <i class="fas fa-redo-alt"></i>
-                            </button>
-                        </div>
-                        
-                        <audio id="audio-player" src="son/khasida.mp3" preload="metadata"></audio>
-                        <div id="autoplay-message" class="autoplay-message">
-                            <i class="fas fa-info-circle"></i>
-                            <span data-translate="audio-message">Cliquez pour écouter la Khasida</span>
-                            <button id="start-audio" class="btn-glow" data-translate="start-audio-btn">Lancer l'audio</button>
-                        </div>
-                    </div>
-                    <div class="audio-message">
-                        <i class="fas fa-info-circle"></i> <span data-translate="khasida-info">Les Khasidas sont des poèmes mystiques composés par Cheikh Ahmadou Bamba Mbacké durant son exil.</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="description">
-                <h2 data-translate="serviteur-title">Le Serviteur Privilégié du Prophète Mohamed PSL (1853-1927)</h2>
-                <div class="expandable-text">
-                    <p data-translate="serviteur-text-1">
-                        Dont le seul tort fut d'avoir osé persister ouvertement dans le prêche pour la religion d'Allah islam.
-                        Fut 32 ans durant l'objet de toutes sortes de privations et d'épreuves tour à tour.
-                    </p>
-                    <div class="hidden-text" id="more-text">
-                        <p data-translate="serviteur-text-2">
-                            Déporté pendant 7 ans au Gabon, 5 ans en Mauritanie, 5 ans à Thieyenne Djolof, 15 en résidence surveillée à Diourbel au Sénégal.
-                            Il n'a jamais cessé jusqu'à son rappel en Dieu le 19 juillet 1927 de défendre par son enseignement et son comportement le message du prophète Mohammed PSL.
-                        </p>
-                    </div>
-                    <button class="read-more-btn" id="read-more-btn"><span data-translate="read-more">Lire la suite</span> <i class="fas fa-angle-down"></i></button>
-                </div>
-            </div>
-            
-            <div class="interactive-section">
-                <h3 data-translate="prepare-title">Préparez-vous pour le Magal</h3>
-                <div class="interactive-tiles">
-                    <div class="tile">
-                        <i class="fas fa-book"></i>
-                        <h4 data-translate="readings-title">Lectures recommandées</h4>
-                        <p data-translate="readings-subtitle">Découvrez les écrits essentiels</p>
-                    </div>
-                    <div class="tile">
-                        <i class="fas fa-pray"></i>
-                        <h4 data-translate="spiritual-title">Pratiques spirituelles</h4>
-                        <p data-translate="spiritual-subtitle">Préparation spirituelle</p>
-                    </div>
-                    <div class="tile">
-                        <i class="fas fa-plane"></i>
-                        <h4 data-translate="travel-title">Planifier votre voyage</h4>
-                        <p data-translate="travel-subtitle">Informations pratiques</p>
-                    </div>
-                </div>
-            </div>
+            <button class="read-more-btn" id="read-more-btn">
+              <span data-translate="read-more">Lire la suite</span>
+              <i class="fas fa-angle-down"></i>
+            </button>
+          </div>
         </div>
-        
-        <footer>
-            <div class="newsletter">
-                <h3 data-translate="newsletter-title">Restez informé</h3>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Votre email" class="email-input" data-translate-placeholder="email-placeholder">
-                    <button class="btn-glow" data-translate="subscribe-btn">S'inscrire</button>
-                </div>
+
+        <div class="interactive-section">
+          <h3 data-translate="prepare-title">Préparez-vous pour le Magal</h3>
+          <div class="interactive-tiles">
+            <div class="tile">
+              <i class="fas fa-book"></i>
+              <h4 data-translate="readings-title">Lectures recommandées</h4>
+              <p data-translate="readings-subtitle">
+                Découvrez les écrits essentiels
+              </p>
             </div>
-            <p data-translate="copyright">© 2025 Magal Touba - Tous droits réservés</p>
-        </footer>
+            <div class="tile">
+              <i class="fas fa-pray"></i>
+              <h4 data-translate="spiritual-title">Pratiques spirituelles</h4>
+              <p data-translate="spiritual-subtitle">Préparation spirituelle</p>
+            </div>
+            <div class="tile">
+              <i class="fas fa-plane"></i>
+              <h4 data-translate="travel-title">Planifier votre voyage</h4>
+              <p data-translate="travel-subtitle">Informations pratiques</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="newsletter">
+          <h3 data-translate="newsletter-title">Restez informé</h3>
+          <div class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Votre email"
+              class="email-input"
+              data-translate-placeholder="email-placeholder"
+            />
+            <button class="btn-glow" data-translate="subscribe-btn">
+              S'inscrire
+            </button>
+          </div>
+        </div>
+        <p data-translate="copyright">
+          © 2025 Magal Touba - Tous droits réservés
+        </p>
+      </footer>
     </div>
 
     <div id="info-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3 data-translate="modal-title">À propos du Magal de Touba</h3>
-            <p data-translate="modal-text-1">Le Grand Magal de Touba commémore le départ en exil de Cheikh Ahmadou Bamba, fondateur du mouridisme.</p>
-            <p data-translate="modal-text-2">C'est l'un des plus grands rassemblements religieux au Sénégal et en Afrique de l'Ouest.</p>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 data-translate="modal-title">À propos du Magal de Touba</h3>
+        <p data-translate="modal-text-1">
+          Le Grand Magal de Touba commémore le départ en exil de Cheikh Ahmadou
+          Bamba, fondateur du mouridisme.
+        </p>
+        <p data-translate="modal-text-2">
+          C'est l'un des plus grands rassemblements religieux au Sénégal et en
+          Afrique de l'Ouest.
+        </p>
+      </div>
     </div>
 
     <div id="copy-message" class="copy-message" data-translate="copy-success">
-        Lien copié avec succès!
+      Lien copié avec succès!
     </div>
 
     <script>
-        // Ajout des traductions
-        const translations = {
-            fr: {
-                "title": "🔔 Magal Touba 2025 🔔",
-                "subtitle": "Le compte à rebours vers l'événement spirituel !",
-                "notify-btn": "M'avertir",
-                "share-btn": "Partager",
-                "info-btn": "En savoir plus",
-                "location": "Touba, Sénégal",
-                "location-tooltip": "Voir sur la carte",
-                "khalifes-title": "Les Khalifes Généraux des Mourides",
-                "khalifes-subtitle": "De 1927 à aujourd'hui - L'héritage spirituel de Serigne Touba",
-                "slider-subtitle": "Le guide spirituel des mourides (1853-1927)",
-                "serigne1-subtitle": "1ème Khalife général (1927-1945)",
-                "serigne2-subtitle": "2ème Khalife général (1945-1968)",
-                "serigne3-subtitle": "3ème Khalife général (1968-1989)",
-                "serigne4-subtitle": "4ème Khalife général (1989-1990)",
-                "serigne5-subtitle": "5ème Khalife général (1990-2007)",
-                "serigne6-subtitle": "6ème Khalife général (2007-2010)",
-                "serigne7-subtitle": "7ème Khalife général (2010-2018)",
-                "serigne8-subtitle": "8ème Khalife général des mourides (depuis 2018)", 
-                "khasida-title": "Khasida - Récitations sacrées",
-                "khasida-subtitle": "Écoutez les poèmes sacrés de Cheikh Ahmadou Bamba",
-                "months": "Mois",
-                "days": "Jours",
-                "hours": "Heures",
-                "minutes": "Minutes",
-                "seconds": "Secondes",
-                "serviteur-title": "Le Serviteur Privilégié du Prophète Mohamed PSL (1853-1927)",
-                "serviteur-text-1": "Dont le seul tort fut d'avoir osé persister ouvertement dans le prêche pour la religion d'Allah islam. Fut 32 ans durant l'objet de toutes sortes de privations et d'épreuves tour à tour.",
-                "serviteur-text-2": "Déporté pendant 7 ans au Gabon, 5 ans en Mauritanie, 5 ans à Thieyenne Djolof, 15 en résidence surveillée à Diourbel au Sénégal. Il n'a jamais cessé jusqu'à son rappel en Dieu le 19 juillet 1927 de défendre par son enseignement et son comportement le message du prophète Mohammed PSL.",
-                "read-more": "Lire la suite",
-                "read-less": "Voir moins",
-                "prepare-title": "Préparez-vous pour le Magal",
-                "readings-title": "Lectures recommandées",
-                "readings-subtitle": "Découvrez les écrits essentiels",
-                "spiritual-title": "Pratiques spirituelles",
-                "spiritual-subtitle": "Préparation spirituelle",
-                "travel-title": "Planifier votre voyage",
-                "travel-subtitle": "Informations pratiques",
-                "modal-title": "À propos du Magal de Touba",
-                "modal-text-1": "Le Grand Magal de Touba commémore le départ en exil de Cheikh Ahmadou Bamba, fondateur du mouridisme.",
-                "modal-text-2": "C'est l'un des plus grands rassemblements religieux au Sénégal et en Afrique de l'Ouest.",
-                "newsletter-title": "Restez informé",
-                "email-placeholder": "Votre email",
-                "subscribe-btn": "S'inscrire",
-                "copyright": "© 2025 Magal Touba - Tous droits réservés",
-                "copy-success": "Lien copié avec succès!",
-                "welcome-title": "Bienvenue au Magal Touba 2025",
-                "welcome-subtitle": "18 Safar 1446 H",
-                "welcome-btn": "Commencer l'expérience",
-                "track-name": "Khasida",
-                "audio-message": "Cliquez pour écouter la Khasida",
-                "start-audio-btn": "Lancer l'audio",
-                "khasida-info": "Les Khasidas sont des poèmes mystiques composés par Cheikh Ahmadou Bamba Mbacké durant son exil."
-            },
-            wo: {
-                "title": "🔔 Magal Touba 2025 🔔",
-                "subtitle": "Waxtaanu ci xew-xew bu mag bi!",
-                "notify-btn": "Yegge ma",
-                "share-btn": "Séddé",
-                "info-btn": "Yeneeni xam-xam",
-                "location": "Touba, Senegal",
-                "location-tooltip": "Xoolal ci kartee bi",
-                "khalifes-title": "Serign yi Khalife Mouride",
-                "khalifes-subtitle": "Li dale 1927 ba tey - Ndono Serigne Touba",
-                "slider-subtitle": "Njiit bu mag bi Mourides yi (1853-1927)",
-                "serigne8-subtitle": "Khalife bu 8 Mourides yi (li dale 2018)",
-                "serigne1-subtitle": "Khalife bu 1 (1927-1945)",
-                "serigne2-subtitle": "Khalife bu 2 (1945-1968)",
-                "serigne3-subtitle": "Khalife bu 3 (1968-1989)",
-                "serigne4-subtitle": "Khalife bu 4 (1989-1990)",
-                "serigne5-subtitle": "Khalife bu 5 (1990-2007)",
-                "serigne6-subtitle": "Khalife bu 6 (2007-2010)",
-                "serigne7-subtitle": "Khalife bu 7 (2010-2018)",
-                "khasida-title": "Khasida - Jàngi yu sell yi",
-                "khasida-subtitle": "Dégluleen woy yi Serigne Touba bindoon ci diaam",
-                "months": "Weer",
-                "days": "Fan",
-                "hours": "Waxtu",
-                "minutes": "Simili",
-                "seconds": "Saa",
-                "serviteur-title": "Surga bu ñakk moroom bi Yonent Mouhamed (SWS) (1853-1927)",
-                "serviteur-text-1": "Li ko teg ay coono mooy li mu ñeme wone ak xel mu leer diine dji Islam. 32 at la nekk ci coono you bari ci diggante reew yi.",
-                "serviteur-text-2": "Gaddou nañ ko 7 at Gabon, 5 at Mauritanie, 5 at Thieyenne ak 15 at Ndiourbel. Li muy wax ak def ba koy deele di joxe wakhtou yonent bi SWS 19 Juillet 1927.", 
-                "read-more": "Jàngal li ci des",
-                "read-less": "Bañ ko gis",
-                "prepare-title": "Waajal sa Magal",
-                "readings-title": "Téere yu jàpp",
-                "readings-subtitle": "Xamal li am solo",
-                "spiritual-title": "Ndigal yi jëm ci ngëm",
-                "spiritual-subtitle": "Xalaat yi jëm ci diine",
-                "travel-title": "Waajal sa tukki",
-                "travel-subtitle": "Xibaar you am solo",
-                "modal-title": "Lu jëm ci Magal bu mag bi ci Touba",
-                "modal-text-1": "Magal bu mag bi di fàttali dem bi Serigne Touba demoon ci gàddu, ki sos yoonu mouride.",
-                "modal-text-2": "Mooy benn ci daje yi gën a mag ci Senegal ak peñc Afrik.",
-                "newsletter-title": "Toog ci xibaar yi",
-                "email-placeholder": "Sa email",
-                "subscribe-btn": "Bind fii",
-                "copyright": "© 2025 Magal Touba - Téere yéppa ñu aar nañu ko",
-                "copy-success": "Lëkkale bi kopie na!",
-                "welcome-title": "Dalal ak jàmm ci Magal Touba 2025",
-                "welcome-subtitle": "18 Safar 1446 H",
-                "welcome-btn": "Tàmbali seetu bi",
-                "track-name": "Khasida",
-                "audio-message": "Bëssal ngir déglu Khasida bi",
-                "start-audio-btn": "Tambali li muy wax",
-                "khasida-info": "Khasida yi ay woy lañu yu sell yu Serigne Touba bindoon ci jamonoy diaamam."
-            }
-        };
-        
-        // Fonction pour changer la langue
-        function changeLang(lang) {
-            const elements = document.querySelectorAll('[data-translate]');
-            elements.forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-            
-            // Traduction des attributs placeholder
-            const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
-            placeholderElements.forEach(element => {
-                const key = element.getAttribute('data-translate-placeholder');
-                if (translations[lang][key]) {
-                    element.placeholder = translations[lang][key];
-                }
-            });
-            
-            // Mettre à jour les classes active
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
-            
-            // Sauvegarder la préférence de langue
-            localStorage.setItem('preferredLanguage', lang);
-            
-            // Mettre à jour les labels du compte à rebours
-            updateCountdown();
-        }
-        
-        function updateCountdown() {
-            const eventDate = moment('2025-08-13T00:00:00');
-            const now = moment();
-            const diff = moment.preciseDiff(now, eventDate, true);
-            
-            // Obtenir la langue actuelle
-            const currentLang = localStorage.getItem('preferredLanguage') || 'fr';
-            
-            const intervals = ['months', 'days', 'hours', 'minutes', 'seconds'];
-            const labels = intervals.map(interval => translations[currentLang][interval]);
-            
-            let html = '';
+      // Ajout des traductions
+      const translations = {
+        fr: {
+          title: "🔔 Magal Touba 2025 🔔",
+          subtitle: "Le compte à rebours vers l'événement spirituel !",
+          "notify-btn": "M'avertir",
+          "share-btn": "Partager",
+          "info-btn": "En savoir plus",
+          location: "Touba, Sénégal",
+          "location-tooltip": "Voir sur la carte",
+          "khalifes-title": "Les Khalifes Généraux des Mourides",
+          "khalifes-subtitle":
+            "De 1927 à aujourd'hui - L'héritage spirituel de Serigne Touba",
+          "slider-subtitle": "Le guide spirituel des mourides (1853-1927)",
+          "serigne1-subtitle": "1ème Khalife général (1927-1945)",
+          "serigne2-subtitle": "2ème Khalife général (1945-1968)",
+          "serigne3-subtitle": "3ème Khalife général (1968-1989)",
+          "serigne4-subtitle": "4ème Khalife général (1989-1990)",
+          "serigne5-subtitle": "5ème Khalife général (1990-2007)",
+          "serigne6-subtitle": "6ème Khalife général (2007-2010)",
+          "serigne7-subtitle": "7ème Khalife général (2010-2018)",
+          "serigne8-subtitle":
+            "8ème Khalife général des mourides (depuis 2018)",
+          "khasida-title": "Khasida - Récitations sacrées",
+          "khasida-subtitle":
+            "Écoutez les poèmes sacrés de Cheikh Ahmadou Bamba",
+          months: "Mois",
+          days: "Jours",
+          hours: "Heures",
+          minutes: "Minutes",
+          seconds: "Secondes",
+          "serviteur-title":
+            "Le Serviteur Privilégié du Prophète Mohamed PSL (1853-1927)",
+          "serviteur-text-1":
+            "Dont le seul tort fut d'avoir osé persister ouvertement dans le prêche pour la religion d'Allah islam. Fut 32 ans durant l'objet de toutes sortes de privations et d'épreuves tour à tour.",
+          "serviteur-text-2":
+            "Déporté pendant 7 ans au Gabon, 5 ans en Mauritanie, 5 ans à Thieyenne Djolof, 15 en résidence surveillée à Diourbel au Sénégal. Il n'a jamais cessé jusqu'à son rappel en Dieu le 19 juillet 1927 de défendre par son enseignement et son comportement le message du prophète Mohammed PSL.",
+          "read-more": "Lire la suite",
+          "read-less": "Voir moins",
+          "prepare-title": "Préparez-vous pour le Magal",
+          "readings-title": "Lectures recommandées",
+          "readings-subtitle": "Découvrez les écrits essentiels",
+          "spiritual-title": "Pratiques spirituelles",
+          "spiritual-subtitle": "Préparation spirituelle",
+          "travel-title": "Planifier votre voyage",
+          "travel-subtitle": "Informations pratiques",
+          "modal-title": "À propos du Magal de Touba",
+          "modal-text-1":
+            "Le Grand Magal de Touba commémore le départ en exil de Cheikh Ahmadou Bamba, fondateur du mouridisme.",
+          "modal-text-2":
+            "C'est l'un des plus grands rassemblements religieux au Sénégal et en Afrique de l'Ouest.",
+          "newsletter-title": "Restez informé",
+          "email-placeholder": "Votre email",
+          "subscribe-btn": "S'inscrire",
+          copyright: "© 2025 Magal Touba - Tous droits réservés",
+          "copy-success": "Lien copié avec succès!",
+          "welcome-title": "Bienvenue au Magal Touba 2025",
+          "welcome-subtitle": "18 Safar 1446 H",
+          "welcome-btn": "Commencer l'expérience",
+          "track-name": "Khasida",
+          "audio-message": "Cliquez pour écouter la Khasida",
+          "start-audio-btn": "Lancer l'audio",
+          "khasida-info":
+            "Les Khasidas sont des poèmes mystiques composés par Cheikh Ahmadou Bamba Mbacké durant son exil.",
+        },
+        wo: {
+          title: "🔔 Magal Touba 2025 🔔",
+          subtitle: "Waxtaanu ci xew-xew bu mag bi!",
+          "notify-btn": "Yegge ma",
+          "share-btn": "Séddé",
+          "info-btn": "Yeneeni xam-xam",
+          location: "Touba, Senegal",
+          "location-tooltip": "Xoolal ci kartee bi",
+          "khalifes-title": "Serign yi Khalife Mouride",
+          "khalifes-subtitle": "Li dale 1927 ba tey - Ndono Serigne Touba",
+          "slider-subtitle": "Njiit bu mag bi Mourides yi (1853-1927)",
+          "serigne8-subtitle": "Khalife bu 8 Mourides yi (li dale 2018)",
+          "serigne1-subtitle": "Khalife bu 1 (1927-1945)",
+          "serigne2-subtitle": "Khalife bu 2 (1945-1968)",
+          "serigne3-subtitle": "Khalife bu 3 (1968-1989)",
+          "serigne4-subtitle": "Khalife bu 4 (1989-1990)",
+          "serigne5-subtitle": "Khalife bu 5 (1990-2007)",
+          "serigne6-subtitle": "Khalife bu 6 (2007-2010)",
+          "serigne7-subtitle": "Khalife bu 7 (2010-2018)",
+          "khasida-title": "Khasida - Jàngi yu sell yi",
+          "khasida-subtitle": "Dégluleen woy yi Serigne Touba bindoon ci diaam",
+          months: "Weer",
+          days: "Fan",
+          hours: "Waxtu",
+          minutes: "Simili",
+          seconds: "Saa",
+          "serviteur-title":
+            "Surga bu ñakk moroom bi Yonent Mouhamed (SWS) (1853-1927)",
+          "serviteur-text-1":
+            "Li ko teg ay coono mooy li mu ñeme wone ak xel mu leer diine dji Islam. 32 at la nekk ci coono you bari ci diggante reew yi.",
+          "serviteur-text-2":
+            "Gaddou nañ ko 7 at Gabon, 5 at Mauritanie, 5 at Thieyenne ak 15 at Ndiourbel. Li muy wax ak def ba koy deele di joxe wakhtou yonent bi SWS 19 Juillet 1927.",
+          "read-more": "Jàngal li ci des",
+          "read-less": "Bañ ko gis",
+          "prepare-title": "Waajal sa Magal",
+          "readings-title": "Téere yu jàpp",
+          "readings-subtitle": "Xamal li am solo",
+          "spiritual-title": "Ndigal yi jëm ci ngëm",
+          "spiritual-subtitle": "Xalaat yi jëm ci diine",
+          "travel-title": "Waajal sa tukki",
+          "travel-subtitle": "Xibaar you am solo",
+          "modal-title": "Lu jëm ci Magal bu mag bi ci Touba",
+          "modal-text-1":
+            "Magal bu mag bi di fàttali dem bi Serigne Touba demoon ci gàddu, ki sos yoonu mouride.",
+          "modal-text-2":
+            "Mooy benn ci daje yi gën a mag ci Senegal ak peñc Afrik.",
+          "newsletter-title": "Toog ci xibaar yi",
+          "email-placeholder": "Sa email",
+          "subscribe-btn": "Bind fii",
+          copyright: "© 2025 Magal Touba - Téere yéppa ñu aar nañu ko",
+          "copy-success": "Lëkkale bi kopie na!",
+          "welcome-title": "Dalal ak jàmm ci Magal Touba 2025",
+          "welcome-subtitle": "18 Safar 1446 H",
+          "welcome-btn": "Tàmbali seetu bi",
+          "track-name": "Khasida",
+          "audio-message": "Bëssal ngir déglu Khasida bi",
+          "start-audio-btn": "Tambali li muy wax",
+          "khasida-info":
+            "Khasida yi ay woy lañu yu sell yu Serigne Touba bindoon ci jamonoy diaamam.",
+        },
+      };
 
-            for (let i = 0; i < intervals.length; i++) {
-                let val = diff[intervals[i]];
-                val = val < 10 ? '0' + val : val;
-                html += `
+      // Fonction pour changer la langue
+      function changeLang(lang) {
+        const elements = document.querySelectorAll("[data-translate]");
+        elements.forEach((element) => {
+          const key = element.getAttribute("data-translate");
+          if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+
+        // Traduction des attributs placeholder
+        const placeholderElements = document.querySelectorAll(
+          "[data-translate-placeholder]"
+        );
+        placeholderElements.forEach((element) => {
+          const key = element.getAttribute("data-translate-placeholder");
+          if (translations[lang][key]) {
+            element.placeholder = translations[lang][key];
+          }
+        });
+
+        // Mettre à jour les classes active
+        document.querySelectorAll(".lang-btn").forEach((btn) => {
+          btn.classList.remove("active");
+        });
+        document
+          .querySelector(`.lang-btn[data-lang="${lang}"]`)
+          .classList.add("active");
+
+        // Sauvegarder la préférence de langue
+        localStorage.setItem("preferredLanguage", lang);
+
+        // Mettre à jour les labels du compte à rebours
+        updateCountdown();
+      }
+
+      function updateCountdown() {
+        const eventDate = moment("2025-08-13T00:00:00");
+        const now = moment();
+        const diff = moment.preciseDiff(now, eventDate, true);
+
+        // Obtenir la langue actuelle
+        const currentLang = localStorage.getItem("preferredLanguage") || "fr";
+
+        const intervals = ["months", "days", "hours", "minutes", "seconds"];
+        const labels = intervals.map(
+          (interval) => translations[currentLang][interval]
+        );
+
+        let html = "";
+
+        for (let i = 0; i < intervals.length; i++) {
+          let val = diff[intervals[i]];
+          val = val < 10 ? "0" + val : val;
+          html += `
                 <div class="box">
                     <div class="value">${val}</div>
                     <div class="label">${labels[i]}</div>
                 </div>
                 `;
-            }
-
-            document.getElementById('output').innerHTML = html;
-            
-            // Update welcome popup countdown too
-            if (document.getElementById('welcome-countdown')) {
-                updateWelcomeCountdown(diff, currentLang);
-            }
         }
-        
-        function updateWelcomeCountdown(diff, currentLang) {
-            const welcomeCountdown = document.getElementById('welcome-countdown');
-            
-            // Calculer le nombre total de jours (mois * 30 + jours)
-            const totalDays = diff.months * 30 + diff.days;
-            
-            // Configuration des cercles avec le total de jours et les labels traduits
-            const circleData = [
-                { value: totalDays, label: translations[currentLang].days, class: 'days-circle' },
-                { value: diff.hours, label: translations[currentLang].hours, class: 'hours-circle' },
-                { value: diff.minutes, label: translations[currentLang].minutes, class: 'minutes-circle' },
-                { value: diff.seconds, label: translations[currentLang].seconds, class: 'seconds-circle' }
-            ];
-            
-            // Clear previous countdown
-            welcomeCountdown.innerHTML = '';
-            
-            // Create circle elements
-            circleData.forEach(item => {
-                const val = item.value < 10 ? '0' + item.value : item.value;
-                const circle = document.createElement('div');
-                circle.className = `circle-container ${item.class}`;
-                
-                circle.innerHTML = `
+
+        document.getElementById("output").innerHTML = html;
+
+        // Update welcome popup countdown too
+        if (document.getElementById("welcome-countdown")) {
+          updateWelcomeCountdown(diff, currentLang);
+        }
+      }
+
+      function updateWelcomeCountdown(diff, currentLang) {
+        const welcomeCountdown = document.getElementById("welcome-countdown");
+
+        // Calculer le nombre total de jours (mois * 30 + jours)
+        const totalDays = diff.months * 30 + diff.days;
+
+        // Configuration des cercles avec le total de jours et les labels traduits
+        const circleData = [
+          {
+            value: totalDays,
+            label: translations[currentLang].days,
+            class: "days-circle",
+          },
+          {
+            value: diff.hours,
+            label: translations[currentLang].hours,
+            class: "hours-circle",
+          },
+          {
+            value: diff.minutes,
+            label: translations[currentLang].minutes,
+            class: "minutes-circle",
+          },
+          {
+            value: diff.seconds,
+            label: translations[currentLang].seconds,
+            class: "seconds-circle",
+          },
+        ];
+
+        // Clear previous countdown
+        welcomeCountdown.innerHTML = "";
+
+        // Create circle elements
+        circleData.forEach((item) => {
+          const val = item.value < 10 ? "0" + item.value : item.value;
+          const circle = document.createElement("div");
+          circle.className = `circle-container ${item.class}`;
+
+          circle.innerHTML = `
                     <div class="circle-outer"></div>
                     <div class="circle-value">${val}</div>
                     <div class="circle-label">${item.label}</div>
                 `;
-                
-                welcomeCountdown.appendChild(circle);
-            });
+
+          welcomeCountdown.appendChild(circle);
+        });
+      }
+
+      setInterval(updateCountdown, 1000);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Call immediately to setup the welcome countdown
+        updateCountdown();
+
+        // Welcome popup
+        const welcomePopup = document.getElementById("welcome-popup");
+        const welcomeClose = document.getElementById("welcome-close");
+
+        // Audio Player Functionality - move this before the welcome popup code
+        const audioPlayer = document.getElementById("audio-player");
+        const playBtn = document.getElementById("play-btn");
+        const playIcon = document.getElementById("play-icon");
+        const muteBtn = document.getElementById("mute-btn");
+        const volumeIcon = document.getElementById("volume-icon");
+        const loopBtn = document.getElementById("loop-btn");
+        const progressBar = document.getElementById("progress-bar");
+        const progress = document.getElementById("progress");
+        const currentTimeDisplay = document.getElementById("current-time");
+        const durationDisplay = document.getElementById("duration");
+        const volumeBar = document.getElementById("volume-bar");
+        const volumeLevel = document.getElementById("volume-level");
+        const autoplayMessage = document.getElementById("autoplay-message");
+        const startAudioBtn = document.getElementById("start-audio");
+
+        // Initialize audio player
+        let isPlaying = false;
+        let isMuted = false;
+        let isLooping = true;
+        loopBtn.classList.add("active");
+        audioPlayer.loop = true;
+
+        // Welcome popup close action - start audio when user clicks "Commencer l'expérience"
+        welcomeClose.addEventListener("click", function () {
+          welcomePopup.classList.add("fade-out");
+          setTimeout(() => {
+            welcomePopup.style.display = "none";
+
+            // Start playing audio when welcome popup is closed
+            audioPlayer
+              .play()
+              .then(() => {
+                isPlaying = true;
+                playIcon.className = "fas fa-pause";
+                autoplayMessage.style.display = "none";
+              })
+              .catch(() => {
+                // If still blocked, show message
+                autoplayMessage.style.display = "flex";
+              });
+          }, 500);
+        });
+
+        // Start audio button (for when autoplay is blocked)
+        startAudioBtn.addEventListener("click", function () {
+          audioPlayer.play().then(() => {
+            isPlaying = true;
+            playIcon.className = "fas fa-pause";
+            autoplayMessage.style.display = "none";
+          });
+        });
+
+        // Play/Pause toggle
+        playBtn.addEventListener("click", function () {
+          if (isPlaying) {
+            audioPlayer.pause();
+            playIcon.className = "fas fa-play";
+          } else {
+            audioPlayer.play();
+            playIcon.className = "fas fa-pause";
+          }
+          isPlaying = !isPlaying;
+        });
+
+        // Mute toggle
+        muteBtn.addEventListener("click", function () {
+          audioPlayer.muted = !audioPlayer.muted;
+          isMuted = audioPlayer.muted;
+          if (isMuted) {
+            volumeIcon.className = "fas fa-volume-mute";
+            volumeLevel.style.width = "0%";
+          } else {
+            volumeIcon.className = "fas fa-volume-up";
+            volumeLevel.style.width = `${audioPlayer.volume * 100}%`;
+          }
+        });
+
+        // Loop toggle
+        loopBtn.addEventListener("click", function () {
+          isLooping = !isLooping;
+          audioPlayer.loop = isLooping;
+          loopBtn.classList.toggle("active", isLooping);
+        });
+
+        // Click on progress bar to seek
+        progressBar.addEventListener("click", function (e) {
+          const percent = e.offsetX / this.offsetWidth;
+          audioPlayer.currentTime = percent * audioPlayer.duration;
+          updateProgress();
+        });
+
+        // Click on volume bar to change volume
+        volumeBar.addEventListener("click", function (e) {
+          const percent = e.offsetX / this.offsetWidth;
+          audioPlayer.volume = percent;
+          volumeLevel.style.width = `${percent * 100}%`;
+
+          if (percent === 0) {
+            volumeIcon.className = "fas fa-volume-mute";
+            audioPlayer.muted = true;
+            isMuted = true;
+          } else {
+            volumeIcon.className = "fas fa-volume-up";
+            audioPlayer.muted = false;
+            isMuted = false;
+          }
+        });
+
+        // Format time to MM:SS
+        function formatTime(seconds) {
+          const minutes = Math.floor(seconds / 60);
+          const remainingSeconds = Math.floor(seconds % 60);
+          return `${
+            minutes < 10 ? "0" : ""
+          }${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
         }
 
-        setInterval(updateCountdown, 1000);
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            // Call immediately to setup the welcome countdown
-            updateCountdown();
-            
-            // Welcome popup
-            const welcomePopup = document.getElementById('welcome-popup');
-            const welcomeClose = document.getElementById('welcome-close');
-            
-            // Audio Player Functionality - move this before the welcome popup code
-            const audioPlayer = document.getElementById('audio-player');
-            const playBtn = document.getElementById('play-btn');
-            const playIcon = document.getElementById('play-icon');
-            const muteBtn = document.getElementById('mute-btn');
-            const volumeIcon = document.getElementById('volume-icon');
-            const loopBtn = document.getElementById('loop-btn');
-            const progressBar = document.getElementById('progress-bar');
-            const progress = document.getElementById('progress');
-            const currentTimeDisplay = document.getElementById('current-time');
-            const durationDisplay = document.getElementById('duration');
-            const volumeBar = document.getElementById('volume-bar');
-            const volumeLevel = document.getElementById('volume-level');
-            const autoplayMessage = document.getElementById('autoplay-message');
-            const startAudioBtn = document.getElementById('start-audio');
-            
-            // Initialize audio player
-            let isPlaying = false;
-            let isMuted = false;
-            let isLooping = true;
-            loopBtn.classList.add('active');
-            audioPlayer.loop = true;
-            
-            // Welcome popup close action - start audio when user clicks "Commencer l'expérience"
-            welcomeClose.addEventListener('click', function() {
-                welcomePopup.classList.add('fade-out');
-                setTimeout(() => {
-                    welcomePopup.style.display = 'none';
-                    
-                    // Start playing audio when welcome popup is closed
-                    audioPlayer.play()
-                        .then(() => {
-                            isPlaying = true;
-                            playIcon.className = 'fas fa-pause';
-                            autoplayMessage.style.display = 'none';
-                        })
-                        .catch(() => {
-                            // If still blocked, show message
-                            autoplayMessage.style.display = 'flex';
-                        });
-                }, 500);
-            });
-            
-            // Start audio button (for when autoplay is blocked)
-            startAudioBtn.addEventListener('click', function() {
-                audioPlayer.play()
-                    .then(() => {
-                        isPlaying = true;
-                        playIcon.className = 'fas fa-pause';
-                        autoplayMessage.style.display = 'none';
-                    });
-            });
-            
-            // Play/Pause toggle
-            playBtn.addEventListener('click', function() {
-                if (isPlaying) {
-                    audioPlayer.pause();
-                    playIcon.className = 'fas fa-play';
-                } else {
-                    audioPlayer.play();
-                    playIcon.className = 'fas fa-pause';
-                }
-                isPlaying = !isPlaying;
-            });
-            
-            // Mute toggle
-            muteBtn.addEventListener('click', function() {
-                audioPlayer.muted = !audioPlayer.muted;
-                isMuted = audioPlayer.muted;
-                if (isMuted) {
-                    volumeIcon.className = 'fas fa-volume-mute';
-                    volumeLevel.style.width = '0%';
-                } else {
-                    volumeIcon.className = 'fas fa-volume-up';
-                    volumeLevel.style.width = `${audioPlayer.volume * 100}%`;
-                }
-            });
-            
-            // Loop toggle
-            loopBtn.addEventListener('click', function() {
-                isLooping = !isLooping;
-                audioPlayer.loop = isLooping;
-                loopBtn.classList.toggle('active', isLooping);
-            });
-            
-            // Click on progress bar to seek
-            progressBar.addEventListener('click', function(e) {
-                const percent = (e.offsetX / this.offsetWidth);
-                audioPlayer.currentTime = percent * audioPlayer.duration;
-                updateProgress();
-            });
-            
-            // Click on volume bar to change volume
-            volumeBar.addEventListener('click', function(e) {
-                const percent = (e.offsetX / this.offsetWidth);
-                audioPlayer.volume = percent;
-                volumeLevel.style.width = `${percent * 100}%`;
-                
-                if (percent === 0) {
-                    volumeIcon.className = 'fas fa-volume-mute';
-                    audioPlayer.muted = true;
-                    isMuted = true;
-                } else {
-                    volumeIcon.className = 'fas fa-volume-up';
-                    audioPlayer.muted = false;
-                    isMuted = false;
-                }
-            });
-            
-            // Format time to MM:SS
-            function formatTime(seconds) {
-                const minutes = Math.floor(seconds / 60);
-                const remainingSeconds = Math.floor(seconds % 60);
-                return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
-            }
-            
-            // Update progress bar and time display
-            function updateProgress() {
-                const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-                progress.style.width = `${percent}%`;
-                currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
-                
-                // If audio is loaded, display duration
-                if (!isNaN(audioPlayer.duration)) {
-                    durationDisplay.textContent = formatTime(audioPlayer.duration);
-                }
-            }
-            
-            // Update progress as audio plays
-            audioPlayer.addEventListener('timeupdate', updateProgress);
-            
-            // When audio ends
-            audioPlayer.addEventListener('ended', function() {
-                if (!isLooping) {
-                    isPlaying = false;
-                    playIcon.className = 'fas fa-play';
-                }
-            });
-            
-            // Set initial volume
-            audioPlayer.volume = 0.7;
-            volumeLevel.style.width = '70%';
-            
-            // Info modal
-            const infoBtn = document.getElementById('info-btn');
-            const infoModal = document.getElementById('info-modal');
-            const closeModal = document.querySelector('.close-modal');
-            
-            infoBtn.addEventListener('click', function() {
-                infoModal.style.display = 'flex';
-                setTimeout(() => {
-                    infoModal.classList.add('show');
-                }, 10);
-            });
-            
-            closeModal.addEventListener('click', function() {
-                infoModal.classList.remove('show');
-                setTimeout(() => {
-                    infoModal.style.display = 'none';
-                }, 300);
-            });
-            
-            // Read more functionality
-            const readMoreBtn = document.getElementById('read-more-btn');
-            const moreText = document.getElementById('more-text');
-            
-            readMoreBtn.addEventListener('click', function() {
-                moreText.classList.toggle('show');
-                const currentLang = localStorage.getItem('preferredLanguage') || 'fr';
-                
-                if (moreText.classList.contains('show')) {
-                    const readLessText = translations[currentLang]['read-less'];
-                    readMoreBtn.innerHTML = `${readLessText} <i class="fas fa-angle-up"></i>`;
-                } else {
-                    const readMoreText = translations[currentLang]['read-more'];
-                    readMoreBtn.innerHTML = `${readMoreText} <i class="fas fa-angle-down"></i>`;
-                }
-            });
-            
-            // Image slider with improved functionality
-            const slider = document.getElementById('image-slider');
-            const slides = slider.querySelectorAll('.slide');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const dotsContainer = document.getElementById('slider-dots');
-            
-            let currentSlide = 0;
-            let slideInterval;
-            const autoPlayDelay = 5000; // 5 seconds
-            
-            // Create dots based on number of slides
-            slides.forEach((_, index) => {
-                const dot = document.createElement('span');
-                dot.classList.add('dot');
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => {
-                    clearInterval(slideInterval);
-                    goToSlide(index);
-                    startAutoPlay();
-                });
-                dotsContainer.appendChild(dot);
-            });
-            
-            function goToSlide(n) {
-                slides[currentSlide].classList.remove('active');
-                document.querySelectorAll('.dot')[currentSlide].classList.remove('active');
-                
-                currentSlide = (n + slides.length) % slides.length;
-                
-                slides[currentSlide].classList.add('active');
-                document.querySelectorAll('.dot')[currentSlide].classList.add('active');
-            }
-            
-            function startAutoPlay() {
-                slideInterval = setInterval(() => {
-                    goToSlide(currentSlide + 1);
-                }, autoPlayDelay);
-            }
-            
-            // Event listeners for controls
-            prevBtn.addEventListener('click', () => {
-                clearInterval(slideInterval);
-                goToSlide(currentSlide - 1);
-                startAutoPlay();
-            });
-            
-            nextBtn.addEventListener('click', () => {
-                clearInterval(slideInterval);
-                goToSlide(currentSlide + 1);
-                startAutoPlay();
-            });
-            
-            // Pause autoplay on slider hover
-            slider.addEventListener('mouseenter', () => {
-                clearInterval(slideInterval);
-            });
-            
-            slider.addEventListener('mouseleave', () => {
-                startAutoPlay();
-            });
-            
-            // Touch events for mobile
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            slider.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-                clearInterval(slideInterval);
-            }, false);
-            
-            slider.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-                startAutoPlay();
-            }, false);
-            
-            function handleSwipe() {
-                if (touchEndX < touchStartX - 50) {
-                    // Swipe left, go to next slide
-                    goToSlide(currentSlide + 1);
-                } else if (touchEndX > touchStartX + 50) {
-                    // Swipe right, go to previous slide
-                    goToSlide(currentSlide - 1);
-                }
-            }
-            
-            // Start autoplay when page loads
+        // Update progress bar and time display
+        function updateProgress() {
+          const percent =
+            (audioPlayer.currentTime / audioPlayer.duration) * 100;
+          progress.style.width = `${percent}%`;
+          currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+
+          // If audio is loaded, display duration
+          if (!isNaN(audioPlayer.duration)) {
+            durationDisplay.textContent = formatTime(audioPlayer.duration);
+          }
+        }
+
+        // Update progress as audio plays
+        audioPlayer.addEventListener("timeupdate", updateProgress);
+
+        // When audio ends
+        audioPlayer.addEventListener("ended", function () {
+          if (!isLooping) {
+            isPlaying = false;
+            playIcon.className = "fas fa-play";
+          }
+        });
+
+        // Set initial volume
+        audioPlayer.volume = 0.7;
+        volumeLevel.style.width = "70%";
+
+        // Info modal
+        const infoBtn = document.getElementById("info-btn");
+        const infoModal = document.getElementById("info-modal");
+        const closeModal = document.querySelector(".close-modal");
+
+        infoBtn.addEventListener("click", function () {
+          infoModal.style.display = "flex";
+          setTimeout(() => {
+            infoModal.classList.add("show");
+          }, 10);
+        });
+
+        closeModal.addEventListener("click", function () {
+          infoModal.classList.remove("show");
+          setTimeout(() => {
+            infoModal.style.display = "none";
+          }, 300);
+        });
+
+        // Read more functionality
+        const readMoreBtn = document.getElementById("read-more-btn");
+        const moreText = document.getElementById("more-text");
+
+        readMoreBtn.addEventListener("click", function () {
+          moreText.classList.toggle("show");
+          const currentLang = localStorage.getItem("preferredLanguage") || "fr";
+
+          if (moreText.classList.contains("show")) {
+            const readLessText = translations[currentLang]["read-less"];
+            readMoreBtn.innerHTML = `${readLessText} <i class="fas fa-angle-up"></i>`;
+          } else {
+            const readMoreText = translations[currentLang]["read-more"];
+            readMoreBtn.innerHTML = `${readMoreText} <i class="fas fa-angle-down"></i>`;
+          }
+        });
+
+        // Image slider with improved functionality
+        const slider = document.getElementById("image-slider");
+        const slides = slider.querySelectorAll(".slide");
+        const prevBtn = document.getElementById("prev-btn");
+        const nextBtn = document.getElementById("next-btn");
+        const dotsContainer = document.getElementById("slider-dots");
+
+        let currentSlide = 0;
+        let slideInterval;
+        const autoPlayDelay = 5000; // 5 seconds
+
+        // Create dots based on number of slides
+        slides.forEach((_, index) => {
+          const dot = document.createElement("span");
+          dot.classList.add("dot");
+          if (index === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => {
+            clearInterval(slideInterval);
+            goToSlide(index);
             startAutoPlay();
-            
-            // Notification et partage
-            document.getElementById('notify-btn').addEventListener('click', function() {
-                const currentLang = localStorage.getItem('preferredLanguage') || 'fr';
-                const message = currentLang === 'fr' ? 
-                    'Vous serez notifié avant le Magal 2025!' : 
-                    'Dina ñu la yégal balaa Magal 2025 bi!';
-                alert(message);
-            });
-      
-              // Partage WhatsApp
+          });
+          dotsContainer.appendChild(dot);
+        });
+
+        function goToSlide(n) {
+          slides[currentSlide].classList.remove("active");
+          document
+            .querySelectorAll(".dot")
+            [currentSlide].classList.remove("active");
+
+          currentSlide = (n + slides.length) % slides.length;
+
+          slides[currentSlide].classList.add("active");
+          document
+            .querySelectorAll(".dot")
+            [currentSlide].classList.add("active");
+        }
+
+        function startAutoPlay() {
+          slideInterval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+          }, autoPlayDelay);
+        }
+
+        // Event listeners for controls
+        prevBtn.addEventListener("click", () => {
+          clearInterval(slideInterval);
+          goToSlide(currentSlide - 1);
+          startAutoPlay();
+        });
+
+        nextBtn.addEventListener("click", () => {
+          clearInterval(slideInterval);
+          goToSlide(currentSlide + 1);
+          startAutoPlay();
+        });
+
+        // Pause autoplay on slider hover
+        slider.addEventListener("mouseenter", () => {
+          clearInterval(slideInterval);
+        });
+
+        slider.addEventListener("mouseleave", () => {
+          startAutoPlay();
+        });
+
+        // Touch events for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slider.addEventListener(
+          "touchstart",
+          (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(slideInterval);
+          },
+          false
+        );
+
+        slider.addEventListener(
+          "touchend",
+          (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            startAutoPlay();
+          },
+          false
+        );
+
+        function handleSwipe() {
+          if (touchEndX < touchStartX - 50) {
+            // Swipe left, go to next slide
+            goToSlide(currentSlide + 1);
+          } else if (touchEndX > touchStartX + 50) {
+            // Swipe right, go to previous slide
+            goToSlide(currentSlide - 1);
+          }
+        }
+
+        // Start autoplay when page loads
+        startAutoPlay();
+
+        // Notification et partage
         document
-        .getElementById("share-btn")
-        .addEventListener("click", function () {
-          const currentLang = localStorage.getItem('preferredLanguage') || 'fr';
-          const shareMessage = currentLang === 'fr' ? 
-              "Je partage avec vous le compte à rebours du Magal Touba 2025! Visitez : " :
-              "Séddé naa ak yaw waxtaanu Magal Touba 2025 bi! Xoolal : ";
-          
-          const message = encodeURIComponent(shareMessage + window.location.href);
-          const whatsappNumber = "221766657278"; // Remplace avec le numéro WhatsApp du vendeur
-          const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
-           window.open(whatsappURL, "_blank");
+          .getElementById("notify-btn")
+          .addEventListener("click", function () {
+            const currentLang =
+              localStorage.getItem("preferredLanguage") || "fr";
+            const message =
+              currentLang === "fr"
+                ? "Vous serez notifié avant le Magal 2025!"
+                : "Dina ñu la yégal balaa Magal 2025 bi!";
+            alert(message);
+          });
+
+        // Partage WhatsApp
+        document
+          .getElementById("share-btn")
+          .addEventListener("click", function () {
+            const currentLang =
+              localStorage.getItem("preferredLanguage") || "fr";
+            const shareMessage =
+              currentLang === "fr"
+                ? "Je partage avec vous le compte à rebours du Magal Touba 2025! Visitez : "
+                : "Séddé naa ak yaw waxtaanu Magal Touba 2025 bi! Xoolal : ";
+
+            const message = encodeURIComponent(
+              shareMessage + window.location.href
+            );
+            const whatsappNumber = "221766657278"; // Remplace avec le numéro WhatsApp du vendeur
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+            window.open(whatsappURL, "_blank");
+          });
+
+        // Add a small animation when clicking on khalife info
+        const khalifeInfos = document.querySelectorAll(".khalife-info");
+        khalifeInfos.forEach((info) => {
+          info.addEventListener("click", function () {
+            this.style.transform = "scale(1.02)";
+            setTimeout(() => {
+              this.style.transform = "scale(1)";
+            }, 300);
+          });
         });
-            
-            // Add a small animation when clicking on khalife info
-            const khalifeInfos = document.querySelectorAll('.khalife-info');
-            khalifeInfos.forEach(info => {
-                info.addEventListener('click', function() {
-                    this.style.transform = 'scale(1.02)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 300);
-                });
-            });
-            
-            // Initialiser la langue préférée de l'utilisateur
-            const preferredLanguage = localStorage.getItem('preferredLanguage') || 'fr';
-            changeLang(preferredLanguage);
-            
-            // Ajouter les écouteurs d'événements pour les boutons de langue
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const lang = this.getAttribute('data-lang');
-                    changeLang(lang);
-                });
-            });
+
+        // Initialiser la langue préférée de l'utilisateur
+        const preferredLanguage =
+          localStorage.getItem("preferredLanguage") || "fr";
+        changeLang(preferredLanguage);
+
+        // Ajouter les écouteurs d'événements pour les boutons de langue
+        document.querySelectorAll(".lang-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const lang = this.getAttribute("data-lang");
+            changeLang(lang);
+          });
         });
+      });
     </script>
-</body>
+  </body>
 </html>
