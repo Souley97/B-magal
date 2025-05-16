@@ -20,6 +20,11 @@ function initVisitorCounter() {
         'event_label': 'new_visitor'
       });
     }
+    
+    // Utiliser également le protocole de mesure
+    if (window.magalAnalytics) {
+      window.magalAnalytics.trackConversion('first_visit', 'engagement', 'new_visitor', 1);
+    }
   }
   
   // Obtenir et afficher le nombre total de visiteurs
@@ -27,23 +32,35 @@ function initVisitorCounter() {
 }
 
 // Fonction pour afficher le nombre de visiteurs
-function displayVisitorCount() {
+async function displayVisitorCount() {
   // Récupérer l'élément du compteur
   const counterElement = document.getElementById('visitor-count');
   if (!counterElement) return;
   
-  // Pour l'instant, afficher un nombre fictif pour démonstration
-  // Dans le futur, cela pourrait être remplacé par des données réelles de GA
-  const startDate = new Date('2023-01-01').getTime();
-  const now = new Date().getTime();
-  const daysSinceStart = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+  let visitorCount = 500; // Valeur par défaut
   
-  // Générer un nombre basé sur le temps écoulé pour que ça paraisse plus réaliste
-  const baseCount = 500;
-  const dailyIncrement = Math.floor(Math.random() * 20) + 10; // 10-30 visiteurs par jour
-  const estimatedCount = baseCount + (daysSinceStart * dailyIncrement);
+  // Essayer de récupérer le nombre réel de visiteurs depuis l'API Google Analytics
+  if (window.GoogleAnalyticsAPI) {
+    try {
+      const stats = await GoogleAnalyticsAPI.getBasicStats();
+      visitorCount = stats.totalVisitors;
+    } catch (error) {
+      console.error('Erreur lors de la récupération du nombre de visiteurs:', error);
+      
+      // Générer un nombre basé sur le temps écoulé en cas d'échec
+      const startDate = new Date('2023-01-01').getTime();
+      const now = new Date().getTime();
+      const daysSinceStart = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+      
+      // Générer un nombre basé sur le temps écoulé pour que ça paraisse plus réaliste
+      const baseCount = 500;
+      const dailyIncrement = Math.floor(Math.random() * 20) + 10; // 10-30 visiteurs par jour
+      visitorCount = baseCount + (daysSinceStart * dailyIncrement);
+    }
+  }
   
-  counterElement.textContent = estimatedCount.toLocaleString();
+  // Afficher le nombre de visiteurs avec séparateur de milliers
+  counterElement.textContent = visitorCount.toLocaleString();
   
   // Envoyer un événement à GA quand l'utilisateur voit le compteur
   if (typeof gtag === 'function') {

@@ -21,20 +21,46 @@
     />
     <title>Magal Touba 2025</title>
     <!-- Google tag (gtag.js) -->
-    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-68SJHJYNJQ"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-      gtag("config", "G-68SJHJYNJQ");
+      // Configuration de base
+      gtag('config', 'G-68SJHJYNJQ', {
+        'send_page_view': true,
+        'anonymize_ip': true,
+        'page_title': document.title,
+        'page_location': window.location.href
+      });
+      
+      // Activer le suivi des événements de scroll
+      let scrollDepthTriggered = {};
+      window.addEventListener('scroll', function() {
+        const scrollDepth = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+        
+        // Déclencher des événements à des profondeurs spécifiques (25%, 50%, 75%, 100%)
+        const depths = [25, 50, 75, 100];
+        depths.forEach(depth => {
+          if (scrollDepth >= depth && !scrollDepthTriggered[depth]) {
+            scrollDepthTriggered[depth] = true;
+            gtag('event', 'scroll_depth', {
+              'event_category': 'engagement',
+              'event_label': 'scroll_depth_' + depth,
+              'value': depth
+            });
+          }
+        });
+      });
     </script>
+    
+    <!-- Measurement Protocol & GA Integration -->
+    <script src="js/measurement-protocol.js"></script>
+    <script src="js/ga-integration.js"></script>
   </head>
   <body>
     <div id="welcome-popup" class="welcome-popup">
@@ -427,7 +453,6 @@
     <script src="js/countdown.js"></script>
     <script src="js/main.js"></script>
     <script src="js/visitor-counter.js"></script>
-    <script src="js/measurement-protocol.js"></script>
     <script src="js/custom-events.js"></script>
   </body>
 </html>

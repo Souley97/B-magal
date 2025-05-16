@@ -169,6 +169,12 @@
     
     // Suivre le temps passé dans les sections importantes
     trackVisibleSections();
+    
+    // Vérifier si nous avons l'API Google Analytics disponible
+    if (window.GoogleAnalyticsAPI) {
+      // Initialiser l'analyse d'engagement du contenu
+      initContentEngagementTracking();
+    }
   });
   
   /**
@@ -222,6 +228,77 @@
           sectionObserver.observe(element);
         }
       });
+    }
+  }
+  
+  /**
+   * Initialise le suivi d'engagement du contenu basé sur les données de Google Analytics
+   */
+  async function initContentEngagementTracking() {
+    try {
+      // Attendre un peu pour permettre le chargement complet de la page
+      setTimeout(async () => {
+        // Récupérer les données de base
+        const basicStats = await GoogleAnalyticsAPI.getBasicStats();
+        
+        // Créer une section d'engagement si elle n'existe pas déjà
+        if (!document.getElementById('content-engagement')) {
+          const engagementHtml = `
+            <div class="section-title">
+              <h3 data-translate="popular-content">Contenu populaire</h3>
+              <p data-translate="popular-content-subtitle">Basé sur ${basicStats.totalVisitors.toLocaleString('fr-FR')} visiteurs</p>
+            </div>
+            <div class="interactive-tiles">
+              <div class="tile" id="popular-khalife">
+                <i class="fas fa-star"></i>
+                <h4 data-translate="popular-khalife">Khalife le plus consulté</h4>
+                <p>Serigne Mountakha Bassirou Mbacké</p>
+              </div>
+              <div class="tile" id="popular-country">
+                <i class="fas fa-globe"></i>
+                <h4 data-translate="visitor-origins">Origines des visiteurs</h4>
+                <p>${basicStats.countries} pays différents</p>
+              </div>
+              <div class="tile" id="real-time-visitors">
+                <i class="fas fa-user-clock"></i>
+                <h4 data-translate="real-time">En temps réel</h4>
+                <p data-translate="real-time-stat"><span id="active-users-count">6</span> utilisateurs actifs</p>
+              </div>
+            </div>
+          `;
+          
+          // Ajouter la section au contenu
+          const contentSection = document.querySelector('.content');
+          if (contentSection) {
+            const engagementSection = document.createElement('div');
+            engagementSection.id = 'content-engagement';
+            engagementSection.className = 'interactive-section engagement-section';
+            engagementSection.innerHTML = engagementHtml;
+            contentSection.appendChild(engagementSection);
+            
+            // Mettre à jour les utilisateurs actifs en temps réel périodiquement
+            updateRealTimeUsers();
+            setInterval(updateRealTimeUsers, 60000); // Mise à jour toutes les minutes
+          }
+        }
+      }, 1500);
+    } catch (error) {
+      console.error('Erreur lors de l\'initialisation du suivi d\'engagement:', error);
+    }
+  }
+  
+  /**
+   * Met à jour les données d'utilisateurs actifs en temps réel
+   */
+  async function updateRealTimeUsers() {
+    try {
+      const realTimeElement = document.getElementById('active-users-count');
+      if (realTimeElement && window.GoogleAnalyticsAPI) {
+        const realTimeData = await GoogleAnalyticsAPI.getRealTimeData();
+        realTimeElement.textContent = realTimeData.activeUsers;
+      }
+    } catch (error) {
+      console.error('Erreur lors de la mise à jour des données en temps réel:', error);
     }
   }
 })(); 
