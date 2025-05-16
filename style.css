@@ -1289,3 +1289,34 @@ footer p {
         font-size: 1em;
     }
 }
+
+/* Compteur de visiteurs */
+.visitor-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px 0;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+.visitor-counter i {
+    color: #00ffff;
+    font-size: 1.2rem;
+}
+
+.visitor-counter .count {
+    font-weight: bold;
+    color: #00ffff;
+    margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+    .visitor-counter {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}

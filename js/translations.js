@@ -66,6 +66,7 @@ const translations = {
     "start-audio-btn": "Lancer l'audio",
     "khasida-info":
       "Les Khasidas sont des poèmes mystiques composés par Cheikh Ahmadou Bamba Mbacké durant son exil.",
+    "visitor-counter": "Visiteurs:",
   },
   wo: {
     title: "🔔 Magal Touba 2025 🔔",
@@ -126,5 +127,6 @@ const translations = {
     "start-audio-btn": "Tambali li muy wax",
     "khasida-info":
       "Khasida yi ay woy lañu yu sell yu Serigne Touba bindoon ci jamonoy diaamam.",
+    "visitor-counter": "Utti-katt yi:",
   },
 }; 

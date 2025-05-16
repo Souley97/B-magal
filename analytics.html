@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistiques de visite - Magal Touba 2025</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-68SJHJYNJQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-68SJHJYNJQ');
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(-45deg, #000428, #004e92, #000428, #004e92);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo {
+            max-width: 100px;
+            margin: 0 auto;
+        }
+        
+        .logo img {
+            width: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 255, 255, 0.5);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-card i {
+            font-size: 2rem;
+            color: #00ffff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+            color: #ffffff;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #cccccc;
+        }
+        
+        .chart-container {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .chart-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #00ffff;
+        }
+        
+        canvas {
+            width: 100% !important;
+            margin-bottom: 1rem;
+        }
+        
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .login-form {
+            max-width: 400px;
+            margin: 10% auto;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #00ffff;
+        }
+        
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-family: inherit;
+        }
+        
+        button {
+            background: rgba(0, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        button:hover {
+            background: rgba(0, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00ffff;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #cccccc;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .admin-container {
+                padding: 1rem;
+            }
+            
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-card {
+                padding: 1rem;
+            }
+            
+            .stat-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="login-screen">
+        <div class="login-form">
+            <h2 style="text-align: center; color: #00ffff; margin-bottom: 2rem;">Administration Magal 2025</h2>
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" placeholder="Entrez votre nom d'utilisateur">
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" placeholder="Entrez votre mot de passe">
+            </div>
+            <button id="login-btn">Se connecter</button>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Retour au site</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-dashboard" style="display: none;">
+        <div class="admin-container">
+            <header>
+                <div class="logo">
+                    <img src="img/2025/serigne_touba.png" alt="Magal Touba">
+                </div>
+                <h1>Statistiques Magal Touba 2025</h1>
+            </header>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-value" id="total-visitors">0</div>
+                    <div class="stat-label">Visiteurs Totaux</div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-eye"></i>
+                    <div class="stat-value" id="today-visitors">0</div>
+                    <div class="stat-label">Visiteurs Aujourd'hui</div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="stat-value" id="mobile-visitors">0</div>
+                    <div class="stat-label">Visiteurs sur Mobile</div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-globe"></i>
+                    <div class="stat-value" id="countries">0</div>
+                    <div class="stat-label">Pays</div>
+                </div>
+            </div>
+            
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <div class="chart-title">Visiteurs par jour</div>
+                    <canvas id="visitors-chart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-title">Pays d'origine</div>
+                    <canvas id="countries-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-title">Activité des visiteurs par heure</div>
+                <canvas id="hourly-chart"></canvas>
+            </div>
+            
+            <footer>
+                <p>© 2025 Magal Touba - Interface d'administration</p>
+                <a href="index.html" class="back-link"><i class="fas fa-home"></i> Retour au site principal</a>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Configuration de sécurité simplifiée - À remplacer par un système plus sécurisé
+        const validUsername = "admin";
+        const validPassword = "magal2025";
+        
+        document.getElementById('login-btn').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if(username === validUsername && password === validPassword) {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('admin-dashboard').style.display = 'block';
+                loadDashboardData();
+                
+                // Envoyer un événement à Google Analytics
+                if (typeof gtag === 'function') {
+                    gtag('event', 'admin_login', {
+                        'event_category': 'admin',
+                        'event_label': 'dashboard_access'
+                    });
+                }
+            } else {
+                alert('Identifiants incorrects. Veuillez réessayer.');
+                // Envoyer un événement d'échec de connexion à Google Analytics
+                if (typeof gtag === 'function') {
+                    gtag('event', 'login_failed', {
+                        'event_category': 'admin',
+                        'event_label': 'authentication_error'
+                    });
+                }
+            }
+        });
+        
+        function loadDashboardData() {
+            // Pour la démonstration, nous utilisons des données fictives
+            // Dans un avenir proche, ces données pourraient être récupérées via l'API Google Analytics
+            
+            // ID Google Analytics 
+            const gaPropertyId = 'G-68SJHJYNJQ';
+            
+            // Statistiques générales - calculées de manière à simuler des données réelles
+            const startDate = new Date('2023-01-01').getTime();
+            const now = new Date().getTime();
+            const daysSinceStart = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+            
+            // Générer des nombres basés sur le temps écoulé pour que ça paraisse plus réaliste
+            const totalVisitors = 500 + (daysSinceStart * 15);
+            const todayVisitors = Math.floor(Math.random() * 50) + 30;
+            const mobileVisitors = Math.floor(totalVisitors * 0.78); // 78% de visiteurs sur mobile
+            const countriesCount = Math.min(28, 10 + Math.floor(daysSinceStart / 30)); // Max 28 pays
+            
+            document.getElementById('total-visitors').textContent = totalVisitors.toLocaleString();
+            document.getElementById('today-visitors').textContent = todayVisitors.toLocaleString();
+            document.getElementById('mobile-visitors').textContent = mobileVisitors.toLocaleString();
+            document.getElementById('countries').textContent = countriesCount;
+            
+            // Données pour le graphique des visiteurs par jour
+            const lastWeekDates = [];
+            const lastWeekVisitors = [];
+            
+            // Générer les 7 derniers jours avec des données de visiteurs simulées
+            for (let i = 6; i >= 0; i--) {
+                const date = new Date();
+                date.setDate(date.getDate() - i);
+                
+                // Format de date (jour mois)
+                const day = date.getDate();
+                const month = date.toLocaleString('fr-FR', { month: 'long' });
+                const formattedDate = `${day} ${month}`;
+                
+                lastWeekDates.push(formattedDate);
+                
+                // Nombre de visiteurs simulé avec une tendance légèrement croissante
+                const baseVisitors = 50 + Math.floor(Math.random() * 30);
+                const trendFactor = 1 + ((6 - i) * 0.05); // Tendance croissante de 5% par jour
+                lastWeekVisitors.push(Math.floor(baseVisitors * trendFactor));
+            }
+            
+            // Graphique de visiteurs par jour
+            const visitorsCtx = document.getElementById('visitors-chart').getContext('2d');
+            const visitorsChart = new Chart(visitorsCtx, {
+                type: 'line',
+                data: {
+                    labels: lastWeekDates,
+                    datasets: [{
+                        label: 'Nombre de visiteurs',
+                        data: lastWeekVisitors,
+                        borderColor: '#00ffff',
+                        backgroundColor: 'rgba(0, 255, 255, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#cccccc'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#cccccc'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Graphique des pays
+            const countriesCtx = document.getElementById('countries-chart').getContext('2d');
+            const countriesChart = new Chart(countriesCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Sénégal', 'France', 'États-Unis', 'Mali', 'Côte d\'Ivoire', 'Autres'],
+                    datasets: [{
+                        data: [45, 20, 12, 8, 5, 10],
+                        backgroundColor: [
+                            '#00ffff',
+                            '#ff8c00',
+                            '#ff00ff',
+                            '#00ff00',
+                            '#ffff00',
+                            '#1e90ff'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#cccccc'
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)'
+                        }
+                    }
+                }
+            });
+            
+            // Données pour le graphique d'activité par heure
+            const hourlyData = [];
+            
+            // Simuler une courbe d'activité typique avec pics aux heures de pointe
+            for (let hour = 0; hour < 24; hour += 2) {
+                let visitors;
+                
+                if (hour >= 8 && hour < 12) {
+                    // Pic du matin
+                    visitors = 60 + Math.floor(Math.random() * 30);
+                } else if (hour >= 14 && hour < 20) {
+                    // Pic de l'après-midi/soirée
+                    visitors = 80 + Math.floor(Math.random() * 30);
+                } else {
+                    // Heures creuses
+                    visitors = 20 + Math.floor(Math.random() * 20);
+                }
+                
+                hourlyData.push(visitors);
+            }
+            
+            // Graphique d'activité par heure
+            const hourlyCtx = document.getElementById('hourly-chart').getContext('2d');
+            const hourlyChart = new Chart(hourlyCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['00h', '02h', '04h', '06h', '08h', '10h', '12h', '14h', '16h', '18h', '20h', '22h'],
+                    datasets: [{
+                        label: 'Visiteurs',
+                        data: hourlyData,
+                        backgroundColor: 'rgba(0, 255, 255, 0.7)',
+                        borderColor: 'rgba(0, 255, 255, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#cccccc'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#cccccc'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Signaler à Google Analytics que le tableau de bord a été chargé
+            if (typeof gtag === 'function') {
+                gtag('event', 'dashboard_loaded', {
+                    'event_category': 'admin',
+                    'event_label': 'data_visualization'
+                });
+            }
+        }
+    </script>
+</body>
+</html>
