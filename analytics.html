@@ -23,6 +23,8 @@
 
       gtag('config', 'G-68SJHJYNJQ');
     </script>
+
+    
     
     <style>
         body {
@@ -301,6 +303,7 @@
         </div>
     </div>
 
+    <script src="js/measurement-protocol.js"></script>
     <script>
         // Configuration de sécurité simplifiée - À remplacer par un système plus sécurisé
         const validUsername = "admin";
@@ -322,6 +325,11 @@
                         'event_label': 'dashboard_access'
                     });
                 }
+                
+                // Utiliser également le protocole de mesure pour plus de fiabilité
+                if (window.magalAnalytics) {
+                    window.magalAnalytics.trackConversion('login', 'admin', 'admin_dashboard_access', 1);
+                }
             } else {
                 alert('Identifiants incorrects. Veuillez réessayer.');
                 // Envoyer un événement d'échec de connexion à Google Analytics
@@ -329,6 +337,15 @@
                     gtag('event', 'login_failed', {
                         'event_category': 'admin',
                         'event_label': 'authentication_error'
+                    });
+                }
+                
+                // Utiliser également le protocole de mesure
+                if (window.magalAnalytics) {
+                    window.magalAnalytics.sendEvent('login_failed', {
+                        category: 'admin',
+                        label: 'authentication_error',
+                        timestamp: new Date().toISOString()
                     });
                 }
             }
