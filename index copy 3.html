@@ -33,9 +33,7 @@
             <div class="typing">Le compte à rebours vers l'événement spirituel !</div>
             
             <div class="interactive-buttons">
-                <button class="btn-glow" id="notify-btn"><i class="fas fa-bell"></i> M'avertir</button>
                 <button class="btn-glow" id="share-btn"><i class="fas fa-share-alt"></i> Partager</button>
-                <button class="btn-glow" id="info-btn"><i class="fas fa-info-circle"></i> En savoir plus</button>
             </div>
         </header>
 
@@ -59,15 +57,15 @@
             <div class="slider-container">
                 <div class="slider" id="image-slider">
                     <div class="slide active">
-                        <img src="img/2025/khalif/SERIGNE-TOUBA-MBACK.png" alt="Serigne Touba" class="gallery-image">
+                        <img src="img/2025/serigne_touba.png" alt="Serigne Touba" class="gallery-image">
                         <div class="slide-caption">
                             <h3>Serigne Touba</h3>
                             <p>Le guide spirituel des mourides (1853-1927)</p>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="img/2025/khalif/8.png" alt="Serigne Mountaha" class="gallery-image">
-                        <div class="slide-caption khalife-info">
+                        <img src="img/2025/serigne_mountaha.jpg" alt="Serigne Mountaha" class="gallery-image">
+                        <div class="slide-caption">
                             <h3>Serigne Mountakha Bassirou Mbacké</h3>
                             <p>8ème Khalife général des mourides (depuis 2018)</p>
                         </div>
@@ -118,7 +116,7 @@
                     <div class="slide">
                         <img src="img/2025/khalif/6.png" alt="Serigne Mountaha" class="gallery-image">
                         <div class="slide-caption khalife-info">
-                            <h3>Mouhammadou Lamine Bara Mbacké</h3>
+                            <h3>Serigne Mouhammadou Lamine Bara Mbacké</h3>
                             <p>6ème Khalife général (2007-2010)</p>
                            <!--  <p>Premier petit-fils de Serigne Touba à assurer la charge de khalife, il a poursuivi les travaux de développement.</p>-->  
                         </div>
@@ -139,6 +137,7 @@
                     <button id="next-btn" class="slider-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
+            
             <div class="audio-section">
                 <div class="section-title">
                     <h2>Khasida - Récitations sacrées</h2>
@@ -592,19 +591,10 @@
             document.getElementById('notify-btn').addEventListener('click', function() {
                 alert('Vous serez notifié avant le Magal 2025!');
             });
-      
-              // Partage WhatsApp
-        document
-        .getElementById("share-btn")
-        .addEventListener("click", function () {
-          const message = encodeURIComponent(
-            "Je partage avec vous le compte à rebours du Magal Touba 2025! Visitez : " +
-              window.location.href
-          );
-          const whatsappNumber = "221766657278"; // Remplace avec le numéro WhatsApp du vendeur
-          const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
-          window.open(whatsappURL, "_blank");
-        });
+            
+            document.getElementById('share-btn').addEventListener('click', function() {
+                alert('Partagez cette page avec vos proches!');
+            });
             
             // Add a small animation when clicking on khalife info
             const khalifeInfos = document.querySelectorAll('.khalife-info');
