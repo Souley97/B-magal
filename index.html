@@ -15,20 +15,20 @@
 <body>
     <div id="welcome-popup" class="welcome-popup">
         <div class="welcome-content">
-            <h2>Bienvenue au Magal Touba 2025</h2>
-            <p>18 Safar 1446 H</p>
+            <h2 data-translate="welcome-title">Bienvenue au Magal Touba 2025</h2>
+            <p data-translate="welcome-subtitle">18 Safar 1446 H</p>
             <div class="countdown-circles" id="welcome-countdown">
                 <!-- Les cercles de compteur seront ajoutés ici par JavaScript -->
             </div>
-            <button id="welcome-close" class="btn-glow">Commencer l'expérience</button>
+            <button id="welcome-close" class="btn-glow" data-translate="welcome-btn">Commencer l'expérience</button>
         </div>
     </div>
 
     <div class="container">
         <header>
             <div class="language-selector">
-                <button class="lang-btn active" data-lang="fr"><img src="img/flag-fr.png" alt="Français">FR</button>
-                <button class="lang-btn" data-lang="wo"><img src="img/flag-sn.png" alt="Wolof">WO</button>
+                <button class="lang-btn active" data-lang="fr"><img src="img/2025/FR.png" alt="Français">FR</button>
+                <button class="lang-btn" data-lang="wo"><img src="img/2025/SN.png" alt="Wolof">WO</button>
             </div>
             
             <div class="logo">
@@ -116,7 +116,7 @@
                         <img src="img/2025/khalif/5.png" alt="Serigne Mountaha" class="gallery-image">
                         <div class="slide-caption khalife-info">
                             <h3>Cheikh Saliou Mbacké</h3>
-                            <p data-translate="serigney-subtitle">5ème Khalife général (1990-2007)</p>
+                            <p data-translate="serigne5-subtitle">5ème Khalife général (1990-2007)</p>
                            <!--  <p>Il a mené des projets agricoles et de rénovation de la mosquée, tout en maintenant la cohésion de la communauté mouride.</p>-->  
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                         <img src="img/2025/khalif/6.png" alt="Serigne Mountaha" class="gallery-image">
                         <div class="slide-caption khalife-info">
                             <h3>Mouhammadou Lamine Bara Mbacké</h3>
-                            <p data-translate="serigne4-subtitle">6ème Khalife général (2007-2010)</p>
+                            <p data-translate="serigne6-subtitle">6ème Khalife général (2007-2010)</p>
                            <!--  <p>Premier petit-fils de Serigne Touba à assurer la charge de khalife, il a poursuivi les travaux de développement.</p>-->  
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                         <img src="img/2025/khalif/7.png" alt="Serigne Mountaha" class="gallery-image">
                         <div class="slide-caption khalife-info">
                             <h3>Serigne Sidy Mokhtar Mbacké</h3>
-                            <p data-translate="serigne4-subtitle">7ème Khalife général (2010-2018)</p>
+                            <p data-translate="serigne7-subtitle">7ème Khalife général (2010-2018)</p>
                             <!-- <p>Il a renforcé la cohésion sociale et poursuivi les projets de développement, reconnu pour sa piété.</p>-->  
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                                 <i class="fas fa-play" id="play-icon"></i>
                             </button>
                             <div class="track-info">
-                                <div class="track-name">Khasida</div>
+                                <div class="track-name" data-translate="track-name">Khasida</div>
                                 <div class="progress-container">
                                     <div class="progress-bar" id="progress-bar">
                                         <div class="progress" id="progress"></div>
@@ -186,12 +186,12 @@
                         <audio id="audio-player" src="son/khasida.mp3" preload="metadata"></audio>
                         <div id="autoplay-message" class="autoplay-message">
                             <i class="fas fa-info-circle"></i>
-                            <span>Cliquez pour écouter la Khasida</span>
-                            <button id="start-audio" class="btn-glow">Lancer l'audio</button>
+                            <span data-translate="audio-message">Cliquez pour écouter la Khasida</span>
+                            <button id="start-audio" class="btn-glow" data-translate="start-audio-btn">Lancer l'audio</button>
                         </div>
                     </div>
                     <div class="audio-message">
-                        <i class="fas fa-info-circle"></i> Les Khasidas sont des poèmes mystiques composés par Cheikh Ahmadou Bamba Mbacké durant son exil.
+                        <i class="fas fa-info-circle"></i> <span data-translate="khasida-info">Les Khasidas sont des poèmes mystiques composés par Cheikh Ahmadou Bamba Mbacké durant son exil.</span>
                     </div>
                 </div>
             </div>
@@ -237,13 +237,13 @@
         
         <footer>
             <div class="newsletter">
-                <h3>Restez informé</h3>
+                <h3 data-translate="newsletter-title">Restez informé</h3>
                 <div class="newsletter-form">
-                    <input type="email" placeholder="Votre email" class="email-input">
-                    <button class="btn-glow">S'inscrire</button>
+                    <input type="email" placeholder="Votre email" class="email-input" data-translate-placeholder="email-placeholder">
+                    <button class="btn-glow" data-translate="subscribe-btn">S'inscrire</button>
                 </div>
             </div>
-            <p>© 2025 Magal Touba - Tous droits réservés</p>
+            <p data-translate="copyright">© 2025 Magal Touba - Tous droits réservés</p>
         </footer>
     </div>
 
@@ -254,6 +254,10 @@
             <p data-translate="modal-text-1">Le Grand Magal de Touba commémore le départ en exil de Cheikh Ahmadou Bamba, fondateur du mouridisme.</p>
             <p data-translate="modal-text-2">C'est l'un des plus grands rassemblements religieux au Sénégal et en Afrique de l'Ouest.</p>
         </div>
+    </div>
+
+    <div id="copy-message" class="copy-message" data-translate="copy-success">
+        Lien copié avec succès!
     </div>
 
     <script>
@@ -299,7 +303,19 @@
                 "travel-subtitle": "Informations pratiques",
                 "modal-title": "À propos du Magal de Touba",
                 "modal-text-1": "Le Grand Magal de Touba commémore le départ en exil de Cheikh Ahmadou Bamba, fondateur du mouridisme.",
-                "modal-text-2": "C'est l'un des plus grands rassemblements religieux au Sénégal et en Afrique de l'Ouest."
+                "modal-text-2": "C'est l'un des plus grands rassemblements religieux au Sénégal et en Afrique de l'Ouest.",
+                "newsletter-title": "Restez informé",
+                "email-placeholder": "Votre email",
+                "subscribe-btn": "S'inscrire",
+                "copyright": "© 2025 Magal Touba - Tous droits réservés",
+                "copy-success": "Lien copié avec succès!",
+                "welcome-title": "Bienvenue au Magal Touba 2025",
+                "welcome-subtitle": "18 Safar 1446 H",
+                "welcome-btn": "Commencer l'expérience",
+                "track-name": "Khasida",
+                "audio-message": "Cliquez pour écouter la Khasida",
+                "start-audio-btn": "Lancer l'audio",
+                "khasida-info": "Les Khasidas sont des poèmes mystiques composés par Cheikh Ahmadou Bamba Mbacké durant son exil."
             },
             wo: {
                 "title": "🔔 Magal Touba 2025 🔔",
@@ -341,7 +357,19 @@
                 "travel-subtitle": "Xibaar you am solo",
                 "modal-title": "Lu jëm ci Magal bu mag bi ci Touba",
                 "modal-text-1": "Magal bu mag bi di fàttali dem bi Serigne Touba demoon ci gàddu, ki sos yoonu mouride.",
-                "modal-text-2": "Mooy benn ci daje yi gën a mag ci Senegal ak peñc Afrik."
+                "modal-text-2": "Mooy benn ci daje yi gën a mag ci Senegal ak peñc Afrik.",
+                "newsletter-title": "Toog ci xibaar yi",
+                "email-placeholder": "Sa email",
+                "subscribe-btn": "Bind fii",
+                "copyright": "© 2025 Magal Touba - Téere yéppa ñu aar nañu ko",
+                "copy-success": "Lëkkale bi kopie na!",
+                "welcome-title": "Dalal ak jàmm ci Magal Touba 2025",
+                "welcome-subtitle": "18 Safar 1446 H",
+                "welcome-btn": "Tàmbali seetu bi",
+                "track-name": "Khasida",
+                "audio-message": "Bëssal ngir déglu Khasida bi",
+                "start-audio-btn": "Tambali li muy wax",
+                "khasida-info": "Khasida yi ay woy lañu yu sell yu Serigne Touba bindoon ci jamonoy diaamam."
             }
         };
         
@@ -352,6 +380,15 @@
                 const key = element.getAttribute('data-translate');
                 if (translations[lang][key]) {
                     element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Traduction des attributs placeholder
+            const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+            placeholderElements.forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[lang][key]) {
+                    element.placeholder = translations[lang][key];
                 }
             });
             
@@ -712,22 +749,28 @@
             // Start autoplay when page loads
             startAutoPlay();
             
-            // Notification and sharing demo buttons
+            // Notification et partage
             document.getElementById('notify-btn').addEventListener('click', function() {
-                alert('Vous serez notifié avant le Magal 2025!');
+                const currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+                const message = currentLang === 'fr' ? 
+                    'Vous serez notifié avant le Magal 2025!' : 
+                    'Dina ñu la yégal balaa Magal 2025 bi!';
+                alert(message);
             });
       
               // Partage WhatsApp
         document
         .getElementById("share-btn")
         .addEventListener("click", function () {
-          const message = encodeURIComponent(
-            "Je partage avec vous le compte à rebours du Magal Touba 2025! Visitez : " +
-              window.location.href
-          );
+          const currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+          const shareMessage = currentLang === 'fr' ? 
+              "Je partage avec vous le compte à rebours du Magal Touba 2025! Visitez : " :
+              "Séddé naa ak yaw waxtaanu Magal Touba 2025 bi! Xoolal : ";
+          
+          const message = encodeURIComponent(shareMessage + window.location.href);
           const whatsappNumber = "221766657278"; // Remplace avec le numéro WhatsApp du vendeur
           const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
-          window.open(whatsappURL, "_blank");
+           window.open(whatsappURL, "_blank");
         });
             
             // Add a small animation when clicking on khalife info
