@@ -16,7 +16,10 @@
     <div id="welcome-popup" class="welcome-popup">
         <div class="welcome-content">
             <h2>Bienvenue au Magal Touba 2025</h2>
-            <p>Rejoignez-nous pour célébrer cet événement spirituel important.</p>
+            <p>18 Safar 1446 H</p>
+            <div class="countdown-circles" id="welcome-countdown">
+                <!-- Les cercles de compteur seront ajoutés ici par JavaScript -->
+            </div>
             <button id="welcome-close" class="btn-glow">Commencer l'expérience</button>
         </div>
     </div>
@@ -70,7 +73,7 @@
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="img/2025/serigne_mountaha.jpg" alt="Serigne Mountaha" class="gallery-image">
+                        {% comment %} <img src="img/2025/serigne_mountaha.jpg" alt="Serigne Mountaha" class="gallery-image"> {% endcomment %}
                         
                         <div class="slide-caption khalife-info">
                             <h3>Cheikh Mouhammadou Moustapha Mbacké</h3>
@@ -120,18 +123,64 @@
                             <p>Il a renforcé la cohésion sociale et poursuivi les projets de développement, reconnu pour sa piété.</p>
                         </div>
                     </div>
-                    <div class="slide">
-                        <img src="img/2025/touba.jpg" alt="Touba" class="gallery-image">
-                        <div class="slide-caption">
-                            <h3>Touba</h3>
-                            <p>La ville sainte des mourides</p>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="slider-controls">
                     <button id="prev-btn" class="slider-btn"><i class="fas fa-chevron-left"></i></button>
                     <div class="slider-dots" id="slider-dots"></div>
                     <button id="next-btn" class="slider-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="audio-section">
+                <div class="section-title">
+                    <h2>Khasida - Récitations sacrées</h2>
+                    <p>Écoutez les poèmes sacrés de Cheikh Ahmadou Bamba</p>
+                </div>
+                
+                <div class="audio-player-container">
+                    <div class="audio-player">
+                        <div class="player-controls">
+                            <button id="play-btn" class="control-btn">
+                                <i class="fas fa-play" id="play-icon"></i>
+                            </button>
+                            <div class="track-info">
+                                <div class="track-name">Khasida</div>
+                                <div class="progress-container">
+                                    <div class="progress-bar" id="progress-bar">
+                                        <div class="progress" id="progress"></div>
+                                    </div>
+                                    <div class="time-display">
+                                        <span id="current-time">00:00</span> / 
+                                        <span id="duration">00:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="volume-container">
+                                <button id="mute-btn" class="control-btn small">
+                                    <i class="fas fa-volume-up" id="volume-icon"></i>
+                                </button>
+                                <div class="volume-slider">
+                                    <div class="volume-bar" id="volume-bar">
+                                        <div class="volume-level" id="volume-level"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="loop-btn" class="control-btn small">
+                                <i class="fas fa-redo-alt"></i>
+                            </button>
+                        </div>
+                        
+                        <audio id="audio-player" src="son/khasida.mp3" preload="metadata"></audio>
+                        <div id="autoplay-message" class="autoplay-message">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Cliquez pour écouter la Khasida</span>
+                            <button id="start-audio" class="btn-glow">Lancer l'audio</button>
+                        </div>
+                    </div>
+                    <div class="audio-message">
+                        <i class="fas fa-info-circle"></i> Les Khasidas sont des poèmes mystiques composés par Cheikh Ahmadou Bamba Mbacké durant son exil.
+                    </div>
                 </div>
             </div>
             
@@ -217,22 +266,198 @@
             }
 
             document.getElementById('output').innerHTML = html;
+            
+            // Update welcome popup countdown too
+            if (document.getElementById('welcome-countdown')) {
+                updateWelcomeCountdown(diff);
+            }
+        }
+        
+        function updateWelcomeCountdown(diff) {
+            const welcomeCountdown = document.getElementById('welcome-countdown');
+            
+            // Calculer le nombre total de jours (mois * 30 + jours)
+            const totalDays = diff.months * 30 + diff.days;
+            
+            // Configuration des cercles avec le total de jours
+            const circleData = [
+                { value: totalDays, label: 'Jours', class: 'days-circle' },
+                { value: diff.hours, label: 'Heures', class: 'hours-circle' },
+                { value: diff.minutes, label: 'Minutes', class: 'minutes-circle' },
+                { value: diff.seconds, label: 'Secondes', class: 'seconds-circle' }
+            ];
+            
+            // Clear previous countdown
+            welcomeCountdown.innerHTML = '';
+            
+            // Create circle elements
+            circleData.forEach(item => {
+                const val = item.value < 10 ? '0' + item.value : item.value;
+                const circle = document.createElement('div');
+                circle.className = `circle-container ${item.class}`;
+                
+                circle.innerHTML = `
+                    <div class="circle-outer"></div>
+                    <div class="circle-value">${val}</div>
+                    <div class="circle-label">${item.label}</div>
+                `;
+                
+                welcomeCountdown.appendChild(circle);
+            });
         }
 
         setInterval(updateCountdown, 1000);
         
-        // Interactive elements
         document.addEventListener('DOMContentLoaded', function() {
+            // Call immediately to setup the welcome countdown
+            updateCountdown();
+            
             // Welcome popup
             const welcomePopup = document.getElementById('welcome-popup');
             const welcomeClose = document.getElementById('welcome-close');
             
+            // Audio Player Functionality - move this before the welcome popup code
+            const audioPlayer = document.getElementById('audio-player');
+            const playBtn = document.getElementById('play-btn');
+            const playIcon = document.getElementById('play-icon');
+            const muteBtn = document.getElementById('mute-btn');
+            const volumeIcon = document.getElementById('volume-icon');
+            const loopBtn = document.getElementById('loop-btn');
+            const progressBar = document.getElementById('progress-bar');
+            const progress = document.getElementById('progress');
+            const currentTimeDisplay = document.getElementById('current-time');
+            const durationDisplay = document.getElementById('duration');
+            const volumeBar = document.getElementById('volume-bar');
+            const volumeLevel = document.getElementById('volume-level');
+            const autoplayMessage = document.getElementById('autoplay-message');
+            const startAudioBtn = document.getElementById('start-audio');
+            
+            // Initialize audio player
+            let isPlaying = false;
+            let isMuted = false;
+            let isLooping = true;
+            loopBtn.classList.add('active');
+            audioPlayer.loop = true;
+            
+            // Welcome popup close action - start audio when user clicks "Commencer l'expérience"
             welcomeClose.addEventListener('click', function() {
                 welcomePopup.classList.add('fade-out');
                 setTimeout(() => {
                     welcomePopup.style.display = 'none';
+                    
+                    // Start playing audio when welcome popup is closed
+                    audioPlayer.play()
+                        .then(() => {
+                            isPlaying = true;
+                            playIcon.className = 'fas fa-pause';
+                            autoplayMessage.style.display = 'none';
+                        })
+                        .catch(() => {
+                            // If still blocked, show message
+                            autoplayMessage.style.display = 'flex';
+                        });
                 }, 500);
             });
+            
+            // Start audio button (for when autoplay is blocked)
+            startAudioBtn.addEventListener('click', function() {
+                audioPlayer.play()
+                    .then(() => {
+                        isPlaying = true;
+                        playIcon.className = 'fas fa-pause';
+                        autoplayMessage.style.display = 'none';
+                    });
+            });
+            
+            // Play/Pause toggle
+            playBtn.addEventListener('click', function() {
+                if (isPlaying) {
+                    audioPlayer.pause();
+                    playIcon.className = 'fas fa-play';
+                } else {
+                    audioPlayer.play();
+                    playIcon.className = 'fas fa-pause';
+                }
+                isPlaying = !isPlaying;
+            });
+            
+            // Mute toggle
+            muteBtn.addEventListener('click', function() {
+                audioPlayer.muted = !audioPlayer.muted;
+                isMuted = audioPlayer.muted;
+                if (isMuted) {
+                    volumeIcon.className = 'fas fa-volume-mute';
+                    volumeLevel.style.width = '0%';
+                } else {
+                    volumeIcon.className = 'fas fa-volume-up';
+                    volumeLevel.style.width = `${audioPlayer.volume * 100}%`;
+                }
+            });
+            
+            // Loop toggle
+            loopBtn.addEventListener('click', function() {
+                isLooping = !isLooping;
+                audioPlayer.loop = isLooping;
+                loopBtn.classList.toggle('active', isLooping);
+            });
+            
+            // Click on progress bar to seek
+            progressBar.addEventListener('click', function(e) {
+                const percent = (e.offsetX / this.offsetWidth);
+                audioPlayer.currentTime = percent * audioPlayer.duration;
+                updateProgress();
+            });
+            
+            // Click on volume bar to change volume
+            volumeBar.addEventListener('click', function(e) {
+                const percent = (e.offsetX / this.offsetWidth);
+                audioPlayer.volume = percent;
+                volumeLevel.style.width = `${percent * 100}%`;
+                
+                if (percent === 0) {
+                    volumeIcon.className = 'fas fa-volume-mute';
+                    audioPlayer.muted = true;
+                    isMuted = true;
+                } else {
+                    volumeIcon.className = 'fas fa-volume-up';
+                    audioPlayer.muted = false;
+                    isMuted = false;
+                }
+            });
+            
+            // Format time to MM:SS
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = Math.floor(seconds % 60);
+                return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+            }
+            
+            // Update progress bar and time display
+            function updateProgress() {
+                const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                progress.style.width = `${percent}%`;
+                currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+                
+                // If audio is loaded, display duration
+                if (!isNaN(audioPlayer.duration)) {
+                    durationDisplay.textContent = formatTime(audioPlayer.duration);
+                }
+            }
+            
+            // Update progress as audio plays
+            audioPlayer.addEventListener('timeupdate', updateProgress);
+            
+            // When audio ends
+            audioPlayer.addEventListener('ended', function() {
+                if (!isLooping) {
+                    isPlaying = false;
+                    playIcon.className = 'fas fa-play';
+                }
+            });
+            
+            // Set initial volume
+            audioPlayer.volume = 0.7;
+            volumeLevel.style.width = '70%';
             
             // Info modal
             const infoBtn = document.getElementById('info-btn');
