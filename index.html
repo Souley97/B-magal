@@ -26,16 +26,21 @@
 
     <div class="container">
         <header>
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="fr"><img src="img/flag-fr.png" alt="Français">FR</button>
+                <button class="lang-btn" data-lang="wo"><img src="img/flag-sn.png" alt="Wolof">WO</button>
+            </div>
+            
             <div class="logo">
                 <img src="img/2025/serigne_touba.png" alt="Serigne Touba" class="main-image pulse">
             </div>
-            <h1>Magal Touba 2025 🔔</h1>
-            <div class="typing">Le compte à rebours vers l'événement spirituel !</div>
+            <h1 data-translate="title"> 🔔Magal Touba 2025 🔔</h1>
+            <div class="typing" data-translate="subtitle">Le compte à rebours vers l'événement spirituel !</div>
             
             <div class="interactive-buttons">
-                <button class="btn-glow" id="notify-btn"><i class="fas fa-bell"></i> M'avertir</button>
-                <button class="btn-glow" id="share-btn"><i class="fas fa-share-alt"></i> Partager</button>
-                <button class="btn-glow" id="info-btn"><i class="fas fa-info-circle"></i> En savoir plus</button>
+                <button class="btn-glow" id="notify-btn"><i class="fas fa-bell"></i> <span data-translate="notify-btn">M'avertir</span></button>
+                <button class="btn-glow" id="share-btn"><i class="fas fa-share-alt"></i> <span data-translate="share-btn">Partager</span></button>
+                <button class="btn-glow" id="info-btn"><i class="fas fa-info-circle"></i> <span data-translate="info-btn">En savoir plus</span></button>
             </div>
         </header>
 
@@ -46,14 +51,14 @@
         <div class="event-date">18 Safar 1446 H | 2025-08-13</div>
         
         <div class="location-badge">
-            <i class="fas fa-map-marker-alt"></i> Touba, Sénégal
-            <span class="location-tooltip">Voir sur la carte</span>
+            <i class="fas fa-map-marker-alt"></i> <span data-translate="location">Touba, Sénégal</span>
+            <span class="location-tooltip" data-translate="location-tooltip">Voir sur la carte</span>
         </div>
 
         <div class="content">
             <div class="section-title">
-                <h2>Les Khalifes Généraux des Mourides</h2>
-                <p>De 1927 à aujourd'hui - L'héritage spirituel de Serigne Touba</p>
+                <h2 data-translate="khalifes-title">Les Khalifes Généraux des Mourides</h2>
+                <p data-translate="khalifes-subtitle">De 1927 à aujourd'hui - L'héritage spirituel de Serigne Touba</p>
             </div>
             
             <div class="slider-container">
@@ -61,15 +66,15 @@
                     <div class="slide active">
                         <img src="img/2025/khalif/SERIGNE-TOUBA-MBACK.png" alt="Serigne Touba" class="gallery-image">
                         <div class="slide-caption">
-                            <h3>Serigne Touba</h3>
-                            <p>Le guide spirituel des mourides (1853-1927)</p>
+                            <h3  >Serigne Touba</h3>
+                            <p data-translate="slider-subtitle">Le guide spirituel des mourides (1853-1927)</p>
                         </div>
                     </div>
                     <div class="slide">
                         <img src="img/2025/khalif/8.png" alt="Serigne Mountaha" class="gallery-image">
                         <div class="slide-caption khalife-info">
                             <h3>Serigne Mountakha Bassirou Mbacké</h3>
-                            <p>8ème Khalife général des mourides (depuis 2018)</p>
+                            <p data-translate="serigne8-subtitle">8ème Khalife général des mourides (depuis 2018)</p>
                         </div>
                     </div>
                     <div class="slide">
@@ -77,7 +82,7 @@
 
                         <div class="slide-caption khalife-info">
                             <h3>Cheikh Mouhammadou Moustapha Mbacké</h3>
-                            <p>1er Khalife général (1927-1945)</p>
+                            <p data-translate="serigne1-subtitle">1er Khalife général (1927-1945)</p>
                         <!--   <p>Premier successeur de Cheikh Ahmadou Bamba, il a initié la construction du chemin de fer reliant Diourbel à Touba.</p>--> 
                         </div>
                     </div>
@@ -86,7 +91,7 @@
 
                         <div class="slide-caption khalife-info">
                             <h3>Cheikh Mouhamadou Fadilou Mbacké</h3>
-                            <p>2ème Khalife général (1945-1968)</p>
+                            <p data-translate="serigne2-subtitle">2ème Khalife général (1945-1968)</p>
                             <!--    <p>Il a achevé la construction de la Grande Mosquée de Touba et a renforcé la dimension du Magal de Touba.</p>--> 
                         </div>
                     </div>
@@ -95,7 +100,7 @@
 
                         <div class="slide-caption khalife-info">
                             <h3>Cheikh Abdoul Ahad Mbacké</h3>
-                            <p>3ème Khalife général (1968-1989)</p>
+                            <p data-translate="serigne3-subtitle">3ème Khalife général (1968-1989)</p>
                         <!--     <p>Il a poursuivi le développement de Touba, notamment dans le domaine de l'urbanisme et de l'éducation religieuse.</p>-->  
                         </div>
                     </div>
@@ -103,7 +108,7 @@
                         <img src="img/2025/khalif/4.png" alt="Serigne Mountaha" class="gallery-image">
                         <div class="slide-caption khalife-info">
                             <h3>Cheikh Abdou Khadr Mbacké</h3>
-                            <p>4ème Khalife général (1989-1990)</p>
+                            <p data-translate="serigne4-subtitle">4ème Khalife général (1989-1990)</p>
                           <!--   <p>Son règne a été court, mais il a continué l'œuvre de modernisation et de développement de la ville.</p>-->  
                         </div>
                     </div>
@@ -111,7 +116,7 @@
                         <img src="img/2025/khalif/5.png" alt="Serigne Mountaha" class="gallery-image">
                         <div class="slide-caption khalife-info">
                             <h3>Cheikh Saliou Mbacké</h3>
-                            <p>5ème Khalife général (1990-2007)</p>
+                            <p data-translate="serigney-subtitle">5ème Khalife général (1990-2007)</p>
                            <!--  <p>Il a mené des projets agricoles et de rénovation de la mosquée, tout en maintenant la cohésion de la communauté mouride.</p>-->  
                         </div>
                     </div>
@@ -119,7 +124,7 @@
                         <img src="img/2025/khalif/6.png" alt="Serigne Mountaha" class="gallery-image">
                         <div class="slide-caption khalife-info">
                             <h3>Mouhammadou Lamine Bara Mbacké</h3>
-                            <p>6ème Khalife général (2007-2010)</p>
+                            <p data-translate="serigne4-subtitle">6ème Khalife général (2007-2010)</p>
                            <!--  <p>Premier petit-fils de Serigne Touba à assurer la charge de khalife, il a poursuivi les travaux de développement.</p>-->  
                         </div>
                     </div>
@@ -127,7 +132,7 @@
                         <img src="img/2025/khalif/7.png" alt="Serigne Mountaha" class="gallery-image">
                         <div class="slide-caption khalife-info">
                             <h3>Serigne Sidy Mokhtar Mbacké</h3>
-                            <p>7ème Khalife général (2010-2018)</p>
+                            <p data-translate="serigne4-subtitle">7ème Khalife général (2010-2018)</p>
                             <!-- <p>Il a renforcé la cohésion sociale et poursuivi les projets de développement, reconnu pour sa piété.</p>-->  
                         </div>
                     </div>
@@ -141,8 +146,8 @@
             </div>
             <div class="audio-section">
                 <div class="section-title">
-                    <h2>Khasida - Récitations sacrées</h2>
-                    <p>Écoutez les poèmes sacrés de Cheikh Ahmadou Bamba</p>
+                    <h2 data-translate="khasida-title">Khasida - Récitations sacrées</h2>
+                    <p data-translate="khasida-subtitle">Écoutez les poèmes sacrés de Cheikh Ahmadou Bamba</p>
                 </div>
                 
                 <div class="audio-player-container">
@@ -192,39 +197,39 @@
             </div>
             
             <div class="description">
-                <h2>Le Serviteur Privilégié du Prophète Mohamed PSL (1853-1927)</h2>
+                <h2 data-translate="serviteur-title">Le Serviteur Privilégié du Prophète Mohamed PSL (1853-1927)</h2>
                 <div class="expandable-text">
-                    <p>
+                    <p data-translate="serviteur-text-1">
                         Dont le seul tort fut d'avoir osé persister ouvertement dans le prêche pour la religion d'Allah islam.
                         Fut 32 ans durant l'objet de toutes sortes de privations et d'épreuves tour à tour.
                     </p>
                     <div class="hidden-text" id="more-text">
-                        <p>
+                        <p data-translate="serviteur-text-2">
                             Déporté pendant 7 ans au Gabon, 5 ans en Mauritanie, 5 ans à Thieyenne Djolof, 15 en résidence surveillée à Diourbel au Sénégal.
                             Il n'a jamais cessé jusqu'à son rappel en Dieu le 19 juillet 1927 de défendre par son enseignement et son comportement le message du prophète Mohammed PSL.
                         </p>
                     </div>
-                    <button class="read-more-btn" id="read-more-btn">Lire la suite <i class="fas fa-angle-down"></i></button>
+                    <button class="read-more-btn" id="read-more-btn"><span data-translate="read-more">Lire la suite</span> <i class="fas fa-angle-down"></i></button>
                 </div>
             </div>
             
             <div class="interactive-section">
-                <h3>Préparez-vous pour le Magal</h3>
+                <h3 data-translate="prepare-title">Préparez-vous pour le Magal</h3>
                 <div class="interactive-tiles">
                     <div class="tile">
                         <i class="fas fa-book"></i>
-                        <h4>Lectures recommandées</h4>
-                        <p>Découvrez les écrits essentiels</p>
+                        <h4 data-translate="readings-title">Lectures recommandées</h4>
+                        <p data-translate="readings-subtitle">Découvrez les écrits essentiels</p>
                     </div>
                     <div class="tile">
                         <i class="fas fa-pray"></i>
-                        <h4>Pratiques spirituelles</h4>
-                        <p>Préparation spirituelle</p>
+                        <h4 data-translate="spiritual-title">Pratiques spirituelles</h4>
+                        <p data-translate="spiritual-subtitle">Préparation spirituelle</p>
                     </div>
                     <div class="tile">
                         <i class="fas fa-plane"></i>
-                        <h4>Planifier votre voyage</h4>
-                        <p>Informations pratiques</p>
+                        <h4 data-translate="travel-title">Planifier votre voyage</h4>
+                        <p data-translate="travel-subtitle">Informations pratiques</p>
                     </div>
                 </div>
             </div>
@@ -245,20 +250,135 @@
     <div id="info-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h3>À propos du Magal de Touba</h3>
-            <p>Le Grand Magal de Touba commémore le départ en exil de Cheikh Ahmadou Bamba, fondateur du mouridisme.</p>
-            <p>C'est l'un des plus grands rassemblements religieux au Sénégal et en Afrique de l'Ouest.</p>
+            <h3 data-translate="modal-title">À propos du Magal de Touba</h3>
+            <p data-translate="modal-text-1">Le Grand Magal de Touba commémore le départ en exil de Cheikh Ahmadou Bamba, fondateur du mouridisme.</p>
+            <p data-translate="modal-text-2">C'est l'un des plus grands rassemblements religieux au Sénégal et en Afrique de l'Ouest.</p>
         </div>
     </div>
 
     <script>
+        // Ajout des traductions
+        const translations = {
+            fr: {
+                "title": "🔔 Magal Touba 2025 🔔",
+                "subtitle": "Le compte à rebours vers l'événement spirituel !",
+                "notify-btn": "M'avertir",
+                "share-btn": "Partager",
+                "info-btn": "En savoir plus",
+                "location": "Touba, Sénégal",
+                "location-tooltip": "Voir sur la carte",
+                "khalifes-title": "Les Khalifes Généraux des Mourides",
+                "khalifes-subtitle": "De 1927 à aujourd'hui - L'héritage spirituel de Serigne Touba",
+                "slider-subtitle": "Le guide spirituel des mourides (1853-1927)",
+                "serigne1-subtitle": "1ème Khalife général (1927-1945)",
+                "serigne2-subtitle": "2ème Khalife général (1945-1968)",
+                "serigne3-subtitle": "3ème Khalife général (1968-1989)",
+                "serigne4-subtitle": "4ème Khalife général (1989-1990)",
+                "serigne5-subtitle": "5ème Khalife général (1990-2007)",
+                "serigne6-subtitle": "6ème Khalife général (2007-2010)",
+                "serigne7-subtitle": "7ème Khalife général (2010-2018)",
+                "serigne8-subtitle": "8ème Khalife général des mourides (depuis 2018)", 
+                "khasida-title": "Khasida - Récitations sacrées",
+                "khasida-subtitle": "Écoutez les poèmes sacrés de Cheikh Ahmadou Bamba",
+                "months": "Mois",
+                "days": "Jours",
+                "hours": "Heures",
+                "minutes": "Minutes",
+                "seconds": "Secondes",
+                "serviteur-title": "Le Serviteur Privilégié du Prophète Mohamed PSL (1853-1927)",
+                "serviteur-text-1": "Dont le seul tort fut d'avoir osé persister ouvertement dans le prêche pour la religion d'Allah islam. Fut 32 ans durant l'objet de toutes sortes de privations et d'épreuves tour à tour.",
+                "serviteur-text-2": "Déporté pendant 7 ans au Gabon, 5 ans en Mauritanie, 5 ans à Thieyenne Djolof, 15 en résidence surveillée à Diourbel au Sénégal. Il n'a jamais cessé jusqu'à son rappel en Dieu le 19 juillet 1927 de défendre par son enseignement et son comportement le message du prophète Mohammed PSL.",
+                "read-more": "Lire la suite",
+                "read-less": "Voir moins",
+                "prepare-title": "Préparez-vous pour le Magal",
+                "readings-title": "Lectures recommandées",
+                "readings-subtitle": "Découvrez les écrits essentiels",
+                "spiritual-title": "Pratiques spirituelles",
+                "spiritual-subtitle": "Préparation spirituelle",
+                "travel-title": "Planifier votre voyage",
+                "travel-subtitle": "Informations pratiques",
+                "modal-title": "À propos du Magal de Touba",
+                "modal-text-1": "Le Grand Magal de Touba commémore le départ en exil de Cheikh Ahmadou Bamba, fondateur du mouridisme.",
+                "modal-text-2": "C'est l'un des plus grands rassemblements religieux au Sénégal et en Afrique de l'Ouest."
+            },
+            wo: {
+                "title": "🔔 Magal Touba 2025 🔔",
+                "subtitle": "Waxtaanu ci xew-xew bu mag bi!",
+                "notify-btn": "Yegge ma",
+                "share-btn": "Séddé",
+                "info-btn": "Yeneeni xam-xam",
+                "location": "Touba, Senegal",
+                "location-tooltip": "Xoolal ci kartee bi",
+                "khalifes-title": "Serign yi Khalife Mouride",
+                "khalifes-subtitle": "Li dale 1927 ba tey - Ndono Serigne Touba",
+                "slider-subtitle": "Njiit bu mag bi Mourides yi (1853-1927)",
+                "serigne8-subtitle": "Khalife bu 8 Mourides yi (li dale 2018)",
+                "serigne1-subtitle": "Khalife bu 1 (1927-1945)",
+                "serigne2-subtitle": "Khalife bu 2 (1945-1968)",
+                "serigne3-subtitle": "Khalife bu 3 (1968-1989)",
+                "serigne4-subtitle": "Khalife bu 4 (1989-1990)",
+                "serigne5-subtitle": "Khalife bu 5 (1990-2007)",
+                "serigne6-subtitle": "Khalife bu 6 (2007-2010)",
+                "serigne7-subtitle": "Khalife bu 7 (2010-2018)",
+                "khasida-title": "Khasida - Jàngi yu sell yi",
+                "khasida-subtitle": "Dégluleen woy yi Serigne Touba bindoon ci diaam",
+                "months": "Weer",
+                "days": "Fan",
+                "hours": "Waxtu",
+                "minutes": "Simili",
+                "seconds": "Saa",
+                "serviteur-title": "Surga bu ñakk moroom bi Yonent Mouhamed (SWS) (1853-1927)",
+                "serviteur-text-1": "Li ko teg ay coono mooy li mu ñeme wone ak xel mu leer diine dji Islam. 32 at la nekk ci coono you bari ci diggante reew yi.",
+                "serviteur-text-2": "Gaddou nañ ko 7 at Gabon, 5 at Mauritanie, 5 at Thieyenne ak 15 at Ndiourbel. Li muy wax ak def ba koy deele di joxe wakhtou yonent bi SWS 19 Juillet 1927.", 
+                "read-more": "Jàngal li ci des",
+                "read-less": "Bañ ko gis",
+                "prepare-title": "Waajal sa Magal",
+                "readings-title": "Téere yu jàpp",
+                "readings-subtitle": "Xamal li am solo",
+                "spiritual-title": "Ndigal yi jëm ci ngëm",
+                "spiritual-subtitle": "Xalaat yi jëm ci diine",
+                "travel-title": "Waajal sa tukki",
+                "travel-subtitle": "Xibaar you am solo",
+                "modal-title": "Lu jëm ci Magal bu mag bi ci Touba",
+                "modal-text-1": "Magal bu mag bi di fàttali dem bi Serigne Touba demoon ci gàddu, ki sos yoonu mouride.",
+                "modal-text-2": "Mooy benn ci daje yi gën a mag ci Senegal ak peñc Afrik."
+            }
+        };
+        
+        // Fonction pour changer la langue
+        function changeLang(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Mettre à jour les classes active
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+            
+            // Sauvegarder la préférence de langue
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Mettre à jour les labels du compte à rebours
+            updateCountdown();
+        }
+        
         function updateCountdown() {
             const eventDate = moment('2025-08-13T00:00:00');
             const now = moment();
             const diff = moment.preciseDiff(now, eventDate, true);
-
-            const intervals = [ 'months', 'days', 'hours', 'minutes', 'seconds'];
-            const labels = [ 'Mois', 'Jours', 'Heures', 'Minutes', 'Secondes'];
+            
+            // Obtenir la langue actuelle
+            const currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+            
+            const intervals = ['months', 'days', 'hours', 'minutes', 'seconds'];
+            const labels = intervals.map(interval => translations[currentLang][interval]);
+            
             let html = '';
 
             for (let i = 0; i < intervals.length; i++) {
@@ -276,22 +396,22 @@
             
             // Update welcome popup countdown too
             if (document.getElementById('welcome-countdown')) {
-                updateWelcomeCountdown(diff);
+                updateWelcomeCountdown(diff, currentLang);
             }
         }
         
-        function updateWelcomeCountdown(diff) {
+        function updateWelcomeCountdown(diff, currentLang) {
             const welcomeCountdown = document.getElementById('welcome-countdown');
             
             // Calculer le nombre total de jours (mois * 30 + jours)
             const totalDays = diff.months * 30 + diff.days;
             
-            // Configuration des cercles avec le total de jours
+            // Configuration des cercles avec le total de jours et les labels traduits
             const circleData = [
-                { value: totalDays, label: 'Jours', class: 'days-circle' },
-                { value: diff.hours, label: 'Heures', class: 'hours-circle' },
-                { value: diff.minutes, label: 'Minutes', class: 'minutes-circle' },
-                { value: diff.seconds, label: 'Secondes', class: 'seconds-circle' }
+                { value: totalDays, label: translations[currentLang].days, class: 'days-circle' },
+                { value: diff.hours, label: translations[currentLang].hours, class: 'hours-circle' },
+                { value: diff.minutes, label: translations[currentLang].minutes, class: 'minutes-circle' },
+                { value: diff.seconds, label: translations[currentLang].seconds, class: 'seconds-circle' }
             ];
             
             // Clear previous countdown
@@ -491,10 +611,14 @@
             
             readMoreBtn.addEventListener('click', function() {
                 moreText.classList.toggle('show');
+                const currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+                
                 if (moreText.classList.contains('show')) {
-                    readMoreBtn.innerHTML = 'Voir moins <i class="fas fa-angle-up"></i>';
+                    const readLessText = translations[currentLang]['read-less'];
+                    readMoreBtn.innerHTML = `${readLessText} <i class="fas fa-angle-up"></i>`;
                 } else {
-                    readMoreBtn.innerHTML = 'Lire la suite <i class="fas fa-angle-down"></i>';
+                    const readMoreText = translations[currentLang]['read-more'];
+                    readMoreBtn.innerHTML = `${readMoreText} <i class="fas fa-angle-down"></i>`;
                 }
             });
             
@@ -614,6 +738,18 @@
                     setTimeout(() => {
                         this.style.transform = 'scale(1)';
                     }, 300);
+                });
+            });
+            
+            // Initialiser la langue préférée de l'utilisateur
+            const preferredLanguage = localStorage.getItem('preferredLanguage') || 'fr';
+            changeLang(preferredLanguage);
+            
+            // Ajouter les écouteurs d'événements pour les boutons de langue
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    changeLang(lang);
                 });
             });
         });
