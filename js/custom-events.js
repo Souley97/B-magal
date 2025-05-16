@@ -242,30 +242,30 @@
         const basicStats = await GoogleAnalyticsAPI.getBasicStats();
         
         // Créer une section d'engagement si elle n'existe pas déjà
-        if (!document.getElementById('content-engagement')) {
-          const engagementHtml = `
-            <div class="section-title">
-              <h3 data-translate="popular-content">Contenu populaire</h3>
-              <p data-translate="popular-content-subtitle">Basé sur ${basicStats.totalVisitors.toLocaleString('fr-FR')} visiteurs</p>
-            </div>
-            <div class="interactive-tiles">
-              <div class="tile" id="popular-khalife">
-                <i class="fas fa-star"></i>
-                <h4 data-translate="popular-khalife">Khalife le plus consulté</h4>
-                <p>Serigne Mountakha Bassirou Mbacké</p>
-              </div>
-              <div class="tile" id="popular-country">
-                <i class="fas fa-globe"></i>
-                <h4 data-translate="visitor-origins">Origines des visiteurs</h4>
-                <p>${basicStats.countries} pays différents</p>
-              </div>
-              <div class="tile" id="real-time-visitors">
-                <i class="fas fa-user-clock"></i>
-                <h4 data-translate="real-time">En temps réel</h4>
-                <p data-translate="real-time-stat"><span id="active-users-count">6</span> utilisateurs actifs</p>
-              </div>
-            </div>
-          `;
+        // if (!document.getElementById('content-engagement')) {
+        //   const engagementHtml = `
+        //     <div class="section-title">
+        //       <h3 data-translate="popular-content">Contenu populaire</h3>
+        //       <p data-translate="popular-content-subtitle">Basé sur ${basicStats.totalVisitors.toLocaleString('fr-FR')} visiteurs</p>
+        //     </div>
+        //     <div class="interactive-tiles">
+        //       <div class="tile" id="popular-khalife">
+        //         <i class="fas fa-star"></i>
+        //         <h4 data-translate="popular-khalife">Khalife le plus consulté</h4>
+        //         <p>Serigne Mountakha Bassirou Mbacké</p>
+        //       </div>
+        //       <div class="tile" id="popular-country">
+        //         <i class="fas fa-globe"></i>
+        //         <h4 data-translate="visitor-origins">Origines des visiteurs</h4>
+        //         <p>${basicStats.countries} pays différents</p>
+        //       </div>
+        //       <div class="tile" id="real-time-visitors">
+        //         <i class="fas fa-user-clock"></i>
+        //         <h4 data-translate="real-time">En temps réel</h4>
+        //         <p data-translate="real-time-stat"><span id="active-users-count">6</span> utilisateurs actifs</p>
+        //       </div>
+        //     </div>
+        //   `;
           
           // Ajouter la section au contenu
           const contentSection = document.querySelector('.content');
