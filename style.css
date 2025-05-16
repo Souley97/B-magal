@@ -1238,5 +1238,54 @@ footer p {
         right: 0;
         justify-content: center;
         margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    /* Amélioration du header en mobile */
+    header {
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .typing {
+        width: 100%;
+        white-space: normal;
+        animation: none;
+        border-right: none;
+        text-align: center;
+        padding: 0 10px;
+    }
+    
+    /* Ajustement du bouton de partage WhatsApp */
+    #share-btn {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .interactive-buttons {
+        width: 100%;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .lang-btn {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .lang-btn img {
+        width: 16px;
+        height: 16px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+        padding: 0 5px;
+    }
+    
+    .typing {
+        font-size: 1em;
     }
 }
