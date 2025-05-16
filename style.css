@@ -745,13 +745,18 @@ footer p {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        overflow: hidden;
+    }
+    
     .countdown {
-        gap: 10px;
+        gap: 8px;
     }
     
     .box {
         min-width: 60px;
-        padding: 10px;
+        padding: 8px;
     }
     
     .value {
@@ -759,63 +764,178 @@ footer p {
     }
     
     h1 {
-        font-size: 2.2em;
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
     }
     
     .content {
         gap: 1.5rem;
+        width: 100%;
+        overflow: hidden;
     }
     
     .gallery-image {
-        max-width: 250px;
+        max-width: 100%;
     }
     
     .interactive-buttons {
         flex-direction: column;
         gap: 10px;
+        width: 100%;
     }
     
     .slider {
-        height: 500px;
+        height: 450px;
     }
     
     .welcome-content {
         width: 90%;
         padding: 1.5rem;
+        margin: 0 10px;
     }
     
     .tile {
         width: 100%;
     }
     
+    /* Circle countdown responsive */
+    .countdown-circles {
+        gap: 10px;
+    }
+    
+    .circle-container {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .circle-value {
+        font-size: 1.5rem;
+    }
+    
+    .circle-label {
+        font-size: 0.6rem;
+        bottom: 15px;
+    }
+    
+    /* Audio player responsive */
+    .audio-player-container {
+        padding: 10px;
+        width: 100%;
+    }
+    
+    .player-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .track-info {
+        width: 100%;
+        text-align: center;
+        margin: 15px 0;
+    }
+    
+    .progress-container {
+        flex-direction: column;
+    }
+    
+    .time-display {
+        text-align: center;
+        margin-top: 5px;
+    }
+    
+    .audio-message {
+        font-size: 0.8rem;
+    }
+    
+    /* Khalife info responsive */
     .khalife-info {
-        padding: 20px 15px;
-    }
-    
-    .khalife-info h3 {
-        font-size: 1.5em;
-    }
-    
-    .khalife-info p:first-of-type {
-        font-size: 1.1em;
-    }
-    
-    .khalife-info p:last-of-type {
-        font-size: 1em;
-    }
-    
-    .section-title h2 {
-        font-size: 1.8em;
-    }
-}
-
-@media (max-width: 480px) {
-    .slider {
-        height: 550px;
+        padding: 15px;
     }
     
     .khalife-info h3 {
         font-size: 1.3em;
+    }
+    
+    .khalife-info p:first-of-type {
+        font-size: 1em;
+    }
+    
+    .khalife-info p:last-of-type {
+        font-size: 0.9em;
+    }
+    
+    /* Slider controls responsive */
+    .slider-controls {
+        padding: 0 10px;
+    }
+    
+    .slider-dots {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .box {
+        width: 80%;
+        max-width: 200px;
+    }
+    
+    h1 {
+        font-size: 1.7em;
+    }
+    
+    .slider {
+        height: 500px;
+    }
+    
+    .circle-container {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .circle-value {
+        font-size: 1.3rem;
+    }
+    
+    .khalife-info h3 {
+        font-size: 1.2em;
+    }
+    
+    /* Fix welcome popup on small devices */
+    .welcome-popup {
+        padding: 0 10px;
+    }
+    
+    .welcome-content {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .welcome-content h2 {
+        font-size: 1.5em;
+    }
+    
+    /* Adjust audio player for small screens */
+    .audio-player-container {
+        padding: 10px;
+    }
+    
+    .control-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .control-btn.small {
+        width: 32px;
+        height: 32px;
     }
 }
 
@@ -996,34 +1116,4 @@ footer p {
     font-size: 1.1em;
     color: #fff;
     margin-bottom: 10px;
-}
-
-/* Responsive design for audio player */
-@media (max-width: 768px) {
-    .player-controls {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .control-btn {
-        width: 60px;
-        height: 60px;
-        font-size: 1.3em;
-    }
-    
-    .track-info {
-        width: 100%;
-        text-align: center;
-        margin: 15px 0;
-    }
-    
-    .volume-container {
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-    }
-    
-    .volume-slider {
-        width: 150px;
-    }
 }
