@@ -1,5 +1,5 @@
 /**
- * Système de compte à rebours pour Magal Touba 2025
+ * Système de compte à rebours pour Magal Touba 2026
  * Gère l'affichage du compte à rebours principal et celui du popup de bienvenue
  */
 
@@ -7,7 +7,7 @@
  * Met à jour le compte à rebours principal
  */
 function updateCountdown() {
-  const eventDate = moment("2025-08-13T00:00:00");
+  const eventDate = moment("2026-08-02T00:00:00");
   const now = moment();
   const diff = moment.preciseDiff(now, eventDate, true);
 
