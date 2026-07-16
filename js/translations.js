@@ -1,11 +1,11 @@
 /**
- * Fichier de traductions pour le site Magal Touba 2025
+ * Fichier de traductions pour le site Magal Touba 2026
  * Contient toutes les traductions disponibles en français et wolof
  */
 
 const translations = {
   fr: {
-    title: "🔔 Magal Touba 2025 🔔",
+    title: "🔔 Magal Touba 2026 🔔",
     subtitle: "Le compte à rebours vers l'événement spirituel !",
     "notify-btn": "M'avertir",
     "share-btn": "Partager",
@@ -56,9 +56,9 @@ const translations = {
     "newsletter-title": "Restez informé",
     "email-placeholder": "Votre email",
     "subscribe-btn": "S'inscrire",
-    copyright: "© 2025 Magal Touba - Tous droits réservés",
+    copyright: "© 2026 Magal Touba - Tous droits réservés",
     "copy-success": "Lien copié avec succès!",
-    "welcome-title": "Bienvenue au Magal Touba 2025",
+    "welcome-title": "Bienvenue au Magal Touba 2026",
     "welcome-subtitle": "18 Safar 1446 H",
     "welcome-btn": "Commencer l'expérience",
     "track-name": "Khasida",
@@ -69,7 +69,7 @@ const translations = {
     "visitor-counter": "Visiteurs:",
   },
   wo: {
-    title: "🔔 Magal Touba 2025 🔔",
+    title: "🔔 Magal Touba 2026 🔔",
     subtitle: "Waxtaanu ci xew-xew bu mag bi!",
     "notify-btn": "Yegge ma",
     "share-btn": "Séddé",
@@ -117,9 +117,9 @@ const translations = {
     "newsletter-title": "Toog ci xibaar yi",
     "email-placeholder": "Sa email",
     "subscribe-btn": "Bind fii",
-    copyright: "© 2025 Magal Touba - Téere yéppa ñu aar nañu ko",
+    copyright: "© 2026 Magal Touba - Téere yéppa ñu aar nañu ko",
     "copy-success": "Lëkkale bi kopie na!",
-    "welcome-title": "Dalal ak jàmm ci Magal Touba 2025",
+    "welcome-title": "Dalal ak jàmm ci Magal Touba 2026",
     "welcome-subtitle": "18 Safar 1446 H",
     "welcome-btn": "Tàmbali seetu bi",
     "track-name": "Khasida",
