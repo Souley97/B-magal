@@ -1,5 +1,5 @@
 /**
- * Script principal pour le site Magal Touba 2025
+ * Script principal pour le site Magal Touba 2026
  * Gère l'initialisation et les interactions utilisateur
  */
 
@@ -273,8 +273,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentLang = localStorage.getItem("preferredLanguage") || "fr";
       const message =
         currentLang === "fr"
-          ? "Vous serez notifié avant le Magal 2025!"
-          : "Dina ñu la yégal balaa Magal 2025 bi!";
+          ? "Vous serez notifié avant le Magal 2026!"
+          : "Dina ñu la yégal balaa Magal 2026 bi!";
       alert(message);
     });
   }
@@ -285,8 +285,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentLang = localStorage.getItem("preferredLanguage") || "fr";
       const shareMessage =
         currentLang === "fr"
-          ? "Je partage avec vous le compte à rebours du Magal Touba 2025! Visitez : "
-          : "Séddé naa ak yaw waxtaanu Magal Touba 2025 bi! Xoolal : ";
+          ? "Je partage avec vous le compte à rebours du Magal Touba 2026! Visitez : "
+          : "Séddé naa ak yaw waxtaanu Magal Touba 2026 bi! Xoolal : ";
 
       const message = encodeURIComponent(shareMessage + window.location.href);
       // Utiliser une URL WhatsApp directe sans numéro spécifique
